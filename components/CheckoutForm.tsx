@@ -61,20 +61,28 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
-      <input
-        type="text"
-        id="custName"
-        placeholder="John Doe"
-        value={custName}
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        id="custEmail"
-        placeholder="johndoe@example.com"
-        value={custEmail}
-        onChange={handleChange}
-      />
+      <div className={styles.custWrapper}>
+        <div className={styles.inputWrapper}>
+          <label htmlFor="custName">Name</label>
+          <input
+            type="text"
+            id="custName"
+            placeholder="John Doe"
+            value={custName}
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputWrapper}>
+          <label htmlFor="custEmail">Email</label>
+          <input
+            type="email"
+            id="custEmail"
+            placeholder="johndoe@example.com"
+            value={custEmail}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
       <PaymentElement />
       <button type="submit" disabled={loading || !stripe || !elements}>
         {loading ? <Spinner /> : "Pay now"}
