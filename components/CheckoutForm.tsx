@@ -23,6 +23,15 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
   });
   const { custName, custEmail } = data;
 
+  const options = {
+    fields: {
+      billingDetails: {
+        name: "never" as const,
+        email: "never" as const,
+      },
+    },
+  };
+
   const handleChange = (e: any) => {
     setData((prevData) => ({ ...prevData, [e.target.id]: e.target.value }));
   };
@@ -83,7 +92,7 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
           />
         </div>
       </div>
-      <PaymentElement />
+      <PaymentElement options={options} />
       <button type="submit" disabled={loading || !stripe || !elements}>
         {loading ? <Spinner /> : "Pay now"}
       </button>
