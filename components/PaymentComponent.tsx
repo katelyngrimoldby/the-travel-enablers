@@ -13,6 +13,7 @@ const PaymentComponent = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         amount: 10000,
+        product: "test",
       }),
     })
       .then((res) => res.json())
