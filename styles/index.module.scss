@@ -1,0 +1,84 @@
+@use 'variables' as v;
+
+@media all and (min-width: 0) {
+  .hero {
+    height: 250px;
+    color: v.$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5%;
+    overflow: hidden;
+
+    span {
+      font-size: 1.2rem;
+    }
+    svg {
+      margin-block: 10px;
+      width: 150px;
+    }
+    .heroContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    a {
+      margin-top: 5px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: v.$black;
+      z-index: -1;
+      opacity: 0.5;
+    }
+    .imgWrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      display: block;
+    }
+    .heroImg {
+      object-fit: cover;
+    }
+  }
+}
+
+@media all and (min-width: v.$tablet) {
+  .hero {
+    height: 400px;
+    span {
+      font-size: 1.5rem;
+    }
+    svg {
+      width: 200px;
+    }
+  }
+}
+
+@media all and (min-width: v.$desktop) {
+  .hero {
+    height: 600px;
+    span {
+      font-size: 2rem;
+    }
+    svg {
+      width: 250px;
+    }
+    a {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use 'variables' as v;
+
+// reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// typography
+h1 {
+  font-family: v.$header;
+  font-weight: 400;
+  @media all and (min-width: 0px) {
+    font-size: 1.5rem;
+  }
+  @media all and (min-width: v.$tablet) {
+    font-size: 2rem;
+  }
+  @media all and (min-width: v.$desktop) {
+    font-size: 3rem;
+  }
+}
+h2 {
+  font-family: v.$header;
+  font-weight: 500;
+  padding-bottom: 2px;
+  margin-bottom: 6px;
+  font-variant-caps: small-caps;
+  @media all and (min-width: 0px) {
+    font-size: 1.5rem;
+  }
+  @media all and (min-width: v.$tablet) {
+    font-size: 1.7rem;
+  }
+  @media all and (min-width: v.$desktop) {
+    font-size: 2rem;
+  }
+}
+h3 {
+  font-family: v.$body;
+  font-weight: 700;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+p,
+span {
+  font-weight: 400;
+}
+
+a,
+p,
+span {
+  font-family: v.$body;
+  font-size: 1rem;
+  @media all and (min-width: v.$desktop) {
+    font-size: 1.125rem;
+  }
+}

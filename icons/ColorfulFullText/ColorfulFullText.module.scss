@@ -1,0 +1,10 @@
+@use '../../styles/variables' as v;
+
+.svg {
+  @media all and (min-width: 0px) {
+    width: 300px;
+  }
+  @media all and (min-width: v.$desktop) {
+    width: 448px;
+  }
+}

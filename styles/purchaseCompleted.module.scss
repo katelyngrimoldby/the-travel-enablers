@@ -1,0 +1,10 @@
+@use "variables" as v;
+
+.main {
+  background-color: v.$maroon;
+  padding: 10%;
+  h1 {
+    color: v.$white;
+    text-align: center;
+  }
+}
