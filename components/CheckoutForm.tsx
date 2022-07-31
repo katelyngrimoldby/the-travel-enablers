@@ -17,24 +17,6 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
 
   const [errMessage, setErrMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({
-    custName: "",
-    custEmail: "",
-  });
-  const { custName, custEmail } = data;
-
-  const options = {
-    fields: {
-      billingDetails: {
-        name: "never" as const,
-        email: "never" as const,
-      },
-    },
-  };
-
-  const handleChange = (e: any) => {
-    setData((prevData) => ({ ...prevData, [e.target.id]: e.target.value }));
-  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -51,12 +33,6 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
         elements,
         confirmParams: {
           return_url: `${window.location.origin}/purchase_completed`,
-          payment_method_data: {
-            billing_details: {
-              name: custName,
-              email: custEmail,
-            },
-          },
         },
       });
       if (error) {
@@ -70,29 +46,7 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
-      <div className={styles.custWrapper}>
-        <div className={styles.inputWrapper}>
-          <label htmlFor="custName">Name</label>
-          <input
-            type="text"
-            id="custName"
-            placeholder="John Doe"
-            value={custName}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.inputWrapper}>
-          <label htmlFor="custEmail">Email</label>
-          <input
-            type="email"
-            id="custEmail"
-            placeholder="johndoe@example.com"
-            value={custEmail}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      <PaymentElement options={options} />
+      <PaymentElement />
       <button type="submit" disabled={loading || !stripe || !elements}>
         {loading ? <Spinner /> : "Pay now"}
       </button>

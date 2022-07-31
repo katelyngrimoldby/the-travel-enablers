@@ -2,26 +2,69 @@ import { useState, useEffect } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "../components/CheckoutForm";
+import styles from "../styles/PaymentComponent.module.scss";
+
 const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_TEST_PK}`);
 
+type ClientSecrets = {
+  depositSecret: string;
+  planSecrets: string[];
+};
+
 const PaymentComponent = () => {
-  const [clientSecret, setClientSecret] = useState(undefined);
+  const [customer, setCustomer] = useState({
+    cName: "",
+    cEmail: "",
+  });
+  const [clientSecrets, setClientSecrets] = useState<ClientSecrets>();
+  const [plan, setPlan] = useState<number>();
+  const [currentSecret, setCurrentSecret] = useState("");
 
   useEffect(() => {
+    if (!plan) {
+      return;
+    }
+
+    if (clientSecrets) {
+      setCurrentSecret(clientSecrets.planSecrets[plan]);
+    }
+  }, [plan, clientSecrets]);
+
+  const handleRadioChange = (e: any) => {
+    setPlan(e.target.id);
+  };
+
+  const handleChange = (e: any) => {
+    setCustomer((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  };
+
+  // when customer submits personal info
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
     fetch("/api/createPaymentIntent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        amount: 10000,
+        deposit: 1000,
+        amounts: [10000, 100000],
         product: "test",
+        customerData: {
+          name: customer.cName,
+          email: customer.cEmail,
+        },
       }),
     })
       .then((res) => res.json())
       .then((data) => {
-        setClientSecret(data.clientSecret);
+        setClientSecrets(data);
       });
-  }, []);
+  };
 
+  //appearance for paymentElements
   const appearance = {
     theme: "flat" as const,
     variables: {
@@ -41,27 +84,101 @@ const PaymentComponent = () => {
   };
 
   return (
-    <div style={{ margin: "0 20%" }}>
-      {clientSecret && stripePromise && (
-        <Elements
-          stripe={stripePromise}
-          options={{
-            clientSecret: clientSecret,
-            appearance: appearance,
-            fonts: [
-              {
-                cssSrc:
-                  "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
-              },
-              {
-                cssSrc:
-                  "https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;700",
-              },
-            ],
-          }}
-        >
-          <CheckoutForm clientSecret={clientSecret} />
-        </Elements>
+    <div style={{ margin: "0 20%" }} className={styles.wrapper}>
+      {clientSecrets ? (
+        <>
+          <div onChange={handleRadioChange} className={styles.radioWrapper}>
+            <h3>Select a Package</h3>
+            <div>
+              <input type="radio" name="pkg" id="0" value="0" />
+              <label htmlFor="0">Plan 1</label>
+            </div>
+            <div>
+              <input type="radio" name="pkg" id="1" value="Plan 1" />
+              <label htmlFor="1">Plan 2</label>
+            </div>
+          </div>
+
+          <div className={styles.paymentWrapper}>
+            <div className={styles.elementWrapper}>
+              <h3>Pay the Deposit to Start a Payment Plan</h3>
+              <Elements
+                stripe={stripePromise}
+                options={{
+                  clientSecret: clientSecrets.depositSecret,
+                  appearance: appearance,
+                  fonts: [
+                    {
+                      cssSrc:
+                        "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
+                    },
+                    {
+                      cssSrc:
+                        "https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;700",
+                    },
+                  ],
+                }}
+              >
+                <CheckoutForm clientSecret={clientSecrets.depositSecret} />
+              </Elements>
+            </div>
+            {currentSecret && (
+              <div key={currentSecret} className={styles.elementWrapper}>
+                <h3>Or Pay in Full Now</h3>
+                <Elements
+                  stripe={stripePromise}
+                  options={{
+                    clientSecret: currentSecret,
+                    appearance: appearance,
+                    fonts: [
+                      {
+                        cssSrc:
+                          "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
+                      },
+                      {
+                        cssSrc:
+                          "https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;700",
+                      },
+                    ],
+                  }}
+                >
+                  <CheckoutForm clientSecret={currentSecret} />
+                </Elements>
+              </div>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className={styles.form}>
+          <h3>Input Your Name and Email</h3>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.custWrapper}>
+              <div className={styles.inputWrapper}>
+                <label htmlFor="cName">Name</label>
+                <input
+                  type="text"
+                  id="cName"
+                  placeholder="John Doe"
+                  value={customer.cName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className={styles.inputWrapper}>
+                <label htmlFor="cEmail">Email</label>
+                <input
+                  type="email"
+                  id="cEmail"
+                  placeholder="johndoe@example.com"
+                  value={customer.cEmail}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit">Next</button>
+          </form>
+        </div>
       )}
     </div>
   );

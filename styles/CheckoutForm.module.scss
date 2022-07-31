@@ -1,44 +1,6 @@
 @use "variables" as v;
 
 .wrapper {
-  label {
-    font-family: v.$header;
-    font-size: 1.3rem;
-    color: v.$teal;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-  }
-  input {
-    font-family: v.$body;
-    font-size: 1rem;
-    padding: 1rem;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 12px;
-    color: v.$black;
-    &::placeholder {
-      color: #2e4d49;
-    }
-    &:focus {
-      outline: 0;
-      box-shadow: 0 0 0 3px hsla(356, 98%, 17%, 25%),
-        0 0 0 1px hsla(356, 98%, 17%, 50%);
-    }
-  }
-
-  .custWrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    justify-content: center;
-  }
-
-  .inputWrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
   button {
     display: block;
     background-color: v.$orange;
@@ -46,7 +8,7 @@
     padding: 6px 12px;
     border-radius: 12px;
     width: fit-content;
-    margin: 15px auto;
+    margin: 1rem auto;
 
     font-family: v.$body;
     font-weight: 700;
