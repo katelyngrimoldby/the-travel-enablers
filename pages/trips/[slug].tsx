@@ -2,9 +2,11 @@ import type { NextPage } from "next";
 import { createClient } from "contentful";
 import Head from "next/head";
 import Image from "next/image";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Hero from "../../components/Hero";
 import PaymentComponent from "../../components/PaymentComponent";
 import Divider from "../../icons/Divider";
+import { Document } from "@contentful/rich-text-types";
 import { TypeGroupTrip, TypeGroupTripFields } from "../../types";
 
 const client = createClient({
@@ -54,28 +56,75 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
     dates,
     deposit,
     initialDescription,
-    itenerary,
+    itinerary,
     packageDetails,
     packageNames,
     packagePrices,
-    test,
+    images,
     title,
   } = trip.fields;
+
+  //prices as numbers to pass to PaymentComponent
   const amounts = packagePrices.map((e) => {
     return parseInt(e);
   });
+
   return (
-    <main>
-      <Hero
-        imgSrc={`https:${test[0].fields.file.url}`}
-        height={test[0].fields.file.details.image?.height}
-        width={test[0].fields.file.details.image?.width}
-      >
-        <h1>{title.toUpperCase()}</h1>
-        <span>{dates}</span>
-        <Divider />
-      </Hero>
-    </main>
+    <>
+      <Head>
+        <title>{`${title} | The Travel Enablers`}</title>
+      </Head>
+
+      <main>
+        <Hero
+          imgSrc={`https:${images[0].fields.file.url}`}
+          height={images[0].fields.file.details.image?.height}
+          width={images[0].fields.file.details.image?.width}
+        >
+          <h1>{title.toUpperCase()}</h1>
+          <span>{dates}</span>
+          <Divider />
+        </Hero>
+
+        <section>
+          <h2>About The Trip</h2>
+          {documentToReactComponents(initialDescription as Document)}
+          <Image
+            src={`https:${images[1].fields.file.url}`}
+            alt={images[1].fields.description}
+            height={images[1].fields.file.details.image?.height}
+            width={images[1].fields.file.details.image?.width}
+          />
+          <h3>Itinerary</h3>
+          {documentToReactComponents(itinerary as Document)}
+          <Image
+            src={`https:${images[2].fields.file.url}`}
+            alt={images[2].fields.description}
+            height={images[2].fields.file.details.image?.height}
+            width={images[2].fields.file.details.image?.width}
+          />
+          {documentToReactComponents(closingDescription as Document)}
+        </section>
+        <div>
+          <Image
+            src={`https:${images[3].fields.file.url}`}
+            alt={images[3].fields.description}
+            height={images[3].fields.file.details.image?.height}
+            width={images[3].fields.file.details.image?.width}
+          />
+        </div>
+        <section>
+          <h2>Book Your Spot</h2>
+          {documentToReactComponents(packageDetails as Document)}
+          <PaymentComponent
+            deposit={deposit}
+            amounts={amounts}
+            product={title}
+            packages={packageNames}
+          />
+        </section>
+      </main>
+    </>
   );
 };
 
