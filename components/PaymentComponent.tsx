@@ -11,7 +11,19 @@ type ClientSecrets = {
   planSecrets: string[];
 };
 
-const PaymentComponent = () => {
+type PaymentProps = {
+  deposit: number;
+  amounts: number[];
+  product: string;
+  packages: string[];
+};
+
+const PaymentComponent = ({
+  deposit,
+  amounts,
+  product,
+  packages,
+}: PaymentProps) => {
   const [customer, setCustomer] = useState({
     cName: "",
     cEmail: "",
@@ -45,13 +57,17 @@ const PaymentComponent = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
+    const stripeAmounts = amounts.map((e) => {
+      return e * 100;
+    });
+
     fetch("/api/createPaymentIntent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        deposit: 1000,
-        amounts: [10000, 100000],
-        product: "test",
+        deposit: deposit * 100,
+        amounts: stripeAmounts,
+        product: product,
         customerData: {
           name: customer.cName,
           email: customer.cEmail,
@@ -89,14 +105,16 @@ const PaymentComponent = () => {
         <>
           <div onChange={handleRadioChange} className={styles.radioWrapper}>
             <h3>Select a Package</h3>
-            <div>
-              <input type="radio" name="pkg" id="0" value="0" />
-              <label htmlFor="0">Plan 1</label>
-            </div>
-            <div>
-              <input type="radio" name="pkg" id="1" value="Plan 1" />
-              <label htmlFor="1">Plan 2</label>
-            </div>
+            {packages.map((e, i) => {
+              return (
+                <div key={i}>
+                  <input type="radio" name="pkg" id={i.toString()} value={i} />
+                  <label
+                    htmlFor={i.toString()}
+                  >{`${e} - $${amounts[i]}`}</label>
+                </div>
+              );
+            })}
           </div>
 
           <div className={styles.paymentWrapper}>
