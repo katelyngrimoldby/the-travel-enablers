@@ -115,7 +115,9 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
                 width={images[2].fields.file.details.image?.width}
               />
             </div>
-            {documentToReactComponents(closingDescription as Document)}
+            <div className={styles.pWrapper}>
+              {documentToReactComponents(closingDescription as Document)}
+            </div>
           </div>
         </section>
         <div className={styles.dividerImg}>
@@ -131,11 +133,10 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
         </div>
         <section className={styles.section}>
           <h2>Book Your Spot</h2>
-          <div className={styles.content}>
-            <div className={styles.pWrapper}>
-              {documentToReactComponents(packageDetails as Document)}
-            </div>
+          <div className={styles.pWrapper}>
+            {documentToReactComponents(packageDetails as Document)}
           </div>
+
           <PaymentComponent
             deposit={deposit}
             amounts={amounts}
