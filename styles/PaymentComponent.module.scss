@@ -1,6 +1,9 @@
 @use "variables" as v;
 
 .wrapper {
+  position: relative;
+  margin: 0 20%;
+  margin-top: 1.5rem;
   h3 {
     color: v.$maroon;
     text-align: center;
@@ -46,7 +49,7 @@
     font-family: v.$body;
     font-size: 1rem;
     padding: 1rem;
-    background-color: #f1f1f1;
+    background-color: #fffbf6;
     border: none;
     border-radius: 12px;
     color: v.$black;

@@ -88,6 +88,7 @@ const PaymentComponent = ({
       fontWeightNormal: "400",
       colorPrimary: "#560107",
       colorText: "#000e0c",
+      colorBackground: "#fffbf6",
     },
     rules: {
       ".Label": {
@@ -100,7 +101,7 @@ const PaymentComponent = ({
   };
 
   return (
-    <div style={{ margin: "0 20%" }} className={styles.wrapper}>
+    <div className={styles.wrapper}>
       {clientSecrets ? (
         <>
           <div onChange={handleRadioChange} className={styles.radioWrapper}>
