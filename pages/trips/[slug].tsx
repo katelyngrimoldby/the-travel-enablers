@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Hero from "../../components/Hero";
 import PaymentComponent from "../../components/PaymentComponent";
 import Divider from "../../icons/Divider";
+import styles from "../../styles/[slug].module.scss";
 import { Document } from "@contentful/rich-text-types";
 import { TypeGroupTrip, TypeGroupTripFields } from "../../types";
 
@@ -86,36 +87,55 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           <Divider />
         </Hero>
 
-        <section>
+        <section id="details" className={styles.section}>
           <h2>About The Trip</h2>
-          {documentToReactComponents(initialDescription as Document)}
-          <Image
-            src={`https:${images[1].fields.file.url}`}
-            alt={images[1].fields.description}
-            height={images[1].fields.file.details.image?.height}
-            width={images[1].fields.file.details.image?.width}
-          />
+          <div className={styles.content}>
+            <div className={styles.pWrapper}>
+              {documentToReactComponents(initialDescription as Document)}
+            </div>
+            <div className={styles.sectionImg}>
+              <Image
+                src={`https:${images[1].fields.file.url}`}
+                alt={images[1].fields.description}
+                height={images[1].fields.file.details.image?.height}
+                width={images[1].fields.file.details.image?.width}
+              />
+            </div>
+          </div>
           <h3>Itinerary</h3>
-          {documentToReactComponents(itinerary as Document)}
-          <Image
-            src={`https:${images[2].fields.file.url}`}
-            alt={images[2].fields.description}
-            height={images[2].fields.file.details.image?.height}
-            width={images[2].fields.file.details.image?.width}
-          />
-          {documentToReactComponents(closingDescription as Document)}
+          <div className={styles.pWrapper}>
+            {documentToReactComponents(itinerary as Document)}
+          </div>
+          <div className={styles.content}>
+            <div className={styles.sectionImg}>
+              <Image
+                src={`https:${images[2].fields.file.url}`}
+                alt={images[2].fields.description}
+                height={images[2].fields.file.details.image?.height}
+                width={images[2].fields.file.details.image?.width}
+              />
+            </div>
+            {documentToReactComponents(closingDescription as Document)}
+          </div>
         </section>
-        <div>
-          <Image
-            src={`https:${images[3].fields.file.url}`}
-            alt={images[3].fields.description}
-            height={images[3].fields.file.details.image?.height}
-            width={images[3].fields.file.details.image?.width}
-          />
+        <div className={styles.dividerImg}>
+          <div className={styles.imgWrapper}>
+            <Image
+              src={`https:${images[3].fields.file.url}`}
+              alt={images[3].fields.description}
+              height={images[3].fields.file.details.image?.height}
+              width={images[3].fields.file.details.image?.width}
+              className={styles.img}
+            />
+          </div>
         </div>
-        <section>
+        <section className={styles.section}>
           <h2>Book Your Spot</h2>
-          {documentToReactComponents(packageDetails as Document)}
+          <div className={styles.content}>
+            <div className={styles.pWrapper}>
+              {documentToReactComponents(packageDetails as Document)}
+            </div>
+          </div>
           <PaymentComponent
             deposit={deposit}
             amounts={amounts}
