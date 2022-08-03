@@ -33,6 +33,12 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage<PageProps> = ({ trips }) => {
+  const sortedTrips = trips.sort((a, b) => {
+    const dateA = parseInt(a.fields.startDate);
+    const dateB = parseInt(b.fields.startDate);
+    return dateA - dateB;
+  });
+  console.log(sortedTrips);
   return (
     <>
       <Head>
@@ -47,7 +53,7 @@ const Home: NextPage<PageProps> = ({ trips }) => {
           <Button location="#" buttonType="main" value="Take the Quiz" />
         </Hero>
         <div>
-          {trips.map((e: TypeGroupTrip) => {
+          {sortedTrips.map((e: TypeGroupTrip) => {
             return <TripCard key={e.sys.id} trip={e} />;
           })}
         </div>
