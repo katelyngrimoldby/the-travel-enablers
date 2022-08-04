@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../components/Button";
 import { TypeGroupTrip } from "../types";
+import styles from "../styles/TripCard.module.scss";
 
 type CardProps = {
   trip: TypeGroupTrip;
@@ -9,7 +10,7 @@ type CardProps = {
 const TripCard = ({ trip }: CardProps) => {
   const { slug, thumbImg } = trip.fields;
   return (
-    <div>
+    <div className={styles.wrapper}>
       {thumbImg.fields.file.details.image && (
         <Image
           src={`https:${thumbImg.fields.file.url}`}
@@ -19,7 +20,7 @@ const TripCard = ({ trip }: CardProps) => {
         />
       )}
       <Button
-        buttonType="dark"
+        buttonType="light"
         value="Learn More"
         location={`/trips/${slug}`}
       />
