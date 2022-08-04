@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import ColorfulCompass from '../icons/ColorfulCompass/ColorfulCompass';
-import MenuOpen from '../icons/MenuOpen';
-import MenuClose from '../icons/MenuClose';
-import ColorfulFullText from '../icons/ColorfulFullText/ColorfulFullText';
-import Button from '../components/Button';
-import styles from '../styles/Layout.module.scss';
+import { useState } from "react";
+import Link from "next/link";
+import ColorfulCompass from "../icons/ColorfulCompass/ColorfulCompass";
+import MenuOpen from "../icons/MenuOpen";
+import MenuClose from "../icons/MenuClose";
+import ColorfulFullText from "../icons/ColorfulFullText/ColorfulFullText";
+import Button from "../components/Button";
+import styles from "../styles/Layout.module.scss";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -20,7 +21,11 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <header className={styles.header}>
-        <ColorfulCompass />
+        <Link href="/">
+          <a>
+            <ColorfulCompass />
+          </a>
+        </Link>
         <button
           className={styles.menuButton}
           type="button"
@@ -50,7 +55,7 @@ const Layout = ({ children }: LayoutProps) => {
               <a href="#">Contact</a>
             </li>
             <li>
-              <Button buttonType={'main'} location="#" value="Take the Quiz" />
+              <Button buttonType={"main"} location="#" value="Take the Quiz" />
             </li>
           </ul>
         </nav>
