@@ -7,6 +7,7 @@ export interface TypeGroupTripFields {
   dates: Contentful.EntryFields.Symbol;
   startDate: Contentful.EntryFields.Date;
   initialDescription: CFRichTextTypes.Block | CFRichTextTypes.Inline;
+  plainDescription: Contentful.EntryFields.Text;
   itinerary: CFRichTextTypes.Block | CFRichTextTypes.Inline;
   closingDescription: CFRichTextTypes.Block | CFRichTextTypes.Inline;
   packageDetails: CFRichTextTypes.Block | CFRichTextTypes.Inline;
