@@ -34,11 +34,19 @@ export async function getStaticProps() {
 
 const Home: NextPage<PageProps> = ({ trips }) => {
   const sortedTrips = trips.sort((a, b) => {
-    const dateA = parseInt(a.fields.startDate);
-    const dateB = parseInt(b.fields.startDate);
-    return dateA - dateB;
+    const splitA = a.fields.startDate.split("-");
+    const splitB = b.fields.startDate.split("-");
+
+    const numA = splitA.map((e) => {
+      return parseInt(e);
+    });
+    const numB = splitB.map((e) => {
+      return parseInt(e);
+    });
+
+    return numA[0] - numB[0] || numA[1] - numB[1] || numA[2] - numB[2];
   });
-  console.log(sortedTrips);
+
   return (
     <>
       <Head>
