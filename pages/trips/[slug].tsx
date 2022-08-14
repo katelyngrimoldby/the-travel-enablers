@@ -57,6 +57,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
     dates,
     deposit,
     initialDescription,
+    plainDescription,
     itinerary,
     packageDetails,
     packageNames,
@@ -74,6 +75,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
     <>
       <Head>
         <title>{`${title} | The Travel Enablers`}</title>
+        <meta name="description" content={plainDescription} />
       </Head>
 
       <main>
