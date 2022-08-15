@@ -1,0 +1,23 @@
+@use "variables" as v;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  span {
+    font-family: v.$body;
+    font-weight: 700;
+  }
+}
+.imgWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.img {
+  object-fit: cover;
+}
