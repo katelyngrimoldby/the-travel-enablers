@@ -2,7 +2,7 @@
 
 @media all and (min-width: 0) {
   .hero {
-    height: 250px;
+    height: 53.3vw;
     color: v.$white;
     display: flex;
     justify-content: center;
@@ -58,7 +58,6 @@
 
 @media all and (min-width: v.$tablet) {
   .hero {
-    height: 400px;
     span {
       font-size: 1.5rem;
     }
@@ -70,7 +69,7 @@
 
 @media all and (min-width: v.$desktop) {
   .hero {
-    height: 600px;
+    height: 53.7vw;
     span {
       font-size: 2rem;
     }
