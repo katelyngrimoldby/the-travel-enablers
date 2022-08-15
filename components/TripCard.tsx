@@ -5,9 +5,10 @@ import styles from "../styles/TripCard.module.scss";
 
 type CardProps = {
   trip: TypeGroupTrip;
+  buttonType: string;
 };
 
-const TripCard = ({ trip }: CardProps) => {
+const TripCard = ({ trip, buttonType }: CardProps) => {
   const { slug, thumbImg } = trip.fields;
   return (
     <div className={styles.wrapper}>
@@ -20,7 +21,7 @@ const TripCard = ({ trip }: CardProps) => {
         />
       )}
       <Button
-        buttonType="light"
+        buttonType={buttonType}
         value="Learn More"
         location={`/trips/${slug}`}
       />
