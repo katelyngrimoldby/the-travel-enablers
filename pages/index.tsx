@@ -3,10 +3,16 @@ import { createClient } from "contentful";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { TypeGroupTrip, TypeGroupTripFields } from "../types";
+import {
+  TypeArticle,
+  TypeArticleFields,
+  TypeGroupTrip,
+  TypeGroupTripFields,
+} from "../types";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import TripCard from "../components/TripCard";
+import ArticleCard from "../components/ArticleCard";
 import Divider from "../icons/Divider";
 import heroImg from "../public/hero-img.jpg";
 import gtImg from "../public/group-trip-img.jpg";
@@ -15,6 +21,7 @@ import styles from "../styles/index.module.scss";
 
 type PageProps = {
   trips: TypeGroupTrip[];
+  articles: TypeArticle[];
 };
 
 export async function getStaticProps() {
@@ -23,18 +30,23 @@ export async function getStaticProps() {
     accessToken: `${process.env.NEXT_PUBLIC__ACCESS}`,
   });
 
-  const res = await client.getEntries<TypeGroupTripFields>({
+  const trips = await client.getEntries<TypeGroupTripFields>({
     content_type: "groupTrip",
+  });
+
+  const articles = await client.getEntries<TypeArticleFields>({
+    content_type: "article",
   });
 
   return {
     props: {
-      trips: res.items,
+      trips: trips.items,
+      articles: articles.items,
     },
   };
 }
 
-const Home: NextPage<PageProps> = ({ trips }) => {
+const Home: NextPage<PageProps> = ({ trips, articles }) => {
   const sortedTrips = trips.sort((a, b) => {
     const splitA = a.fields.startDate.split("-");
     const splitB = b.fields.startDate.split("-");
