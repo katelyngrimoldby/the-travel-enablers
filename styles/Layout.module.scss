@@ -1,4 +1,4 @@
-@use './variables' as v;
+@use "./variables" as v;
 
 @media all and (min-width: 0px) {
   .header,
@@ -62,8 +62,6 @@
     padding-top: 5%;
     h2 {
       color: v.$teal;
-      border-bottom: 4px solid v.$orange;
-      display: inline-block;
     }
   }
   .bottomFooter {
