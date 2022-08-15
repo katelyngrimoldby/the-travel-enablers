@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 // reset
 * {
@@ -25,8 +25,10 @@ h2 {
   font-family: v.$header;
   font-weight: 500;
   padding-bottom: 2px;
-  margin-bottom: 6px;
+  margin-bottom: 1rem;
   font-variant-caps: small-caps;
+  border-bottom: 4px solid v.$orange;
+  display: inline-block;
   @media all and (min-width: 0px) {
     font-size: 1.5rem;
   }
@@ -40,6 +42,7 @@ h2 {
 h3 {
   font-family: v.$body;
   font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 a {
