@@ -26,6 +26,7 @@ export default async function handler(
     automatic_payment_methods: {
       enabled: true,
     },
+    receipt_email: customerData.email,
     metadata: {
       product: product,
     },
@@ -42,6 +43,7 @@ export default async function handler(
       automatic_payment_methods: {
         enabled: true,
       },
+      receipt_email: customerData.email,
       metadata: {
         product: product,
       },
