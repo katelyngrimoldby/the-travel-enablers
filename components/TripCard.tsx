@@ -22,7 +22,7 @@ const TripCard = ({ trip, buttonType }: CardProps) => {
       )}
       <Button
         buttonType={buttonType}
-        value="Learn More"
+        value="View Trip"
         location={`/trips/${slug}`}
       />
     </div>
