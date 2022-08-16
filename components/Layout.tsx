@@ -43,10 +43,14 @@ const Layout = ({ children }: LayoutProps) => {
           </button>
           <ul>
             <li>
-              <a href="#">Upcoming Trips</a>
+              <Link href="/trips">
+                <a onClick={clickHandler}>Upcoming Trips</a>
+              </Link>
             </li>
             <li>
-              <a href="#">Articles</a>
+              <Link href="/articles">
+                <a onClick={clickHandler}>Articles</a>
+              </Link>
             </li>
             <li>
               <a href="#">About</a>
@@ -69,20 +73,24 @@ const Layout = ({ children }: LayoutProps) => {
               <h2>Explore</h2>
               <ul>
                 <li>
-                  <a href="#">Upcoming Trips</a>
+                  <Link href="/trips">
+                    <a>Upcoming Trips</a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#">Custom Trip Planning</a>
                 </li>
                 <li>
-                  <a href="#">Articles</a>
+                  <Link href="/articles">
+                    <a>Articles</a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#">About</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">Contact</a>
-                </li>
+                </li> */}
               </ul>
             </section>
             <section>
