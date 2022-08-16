@@ -1,13 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import { loadStripe } from "@stripe/stripe-js";
-import styles from "../styles/purchaseCompleted.module.scss";
+import Hero from "../components/Hero";
+import heroImg from "../public/hero-img.jpg";
+import Divider from "../icons/Divider";
 const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_TEST_PK}`);
 
 const PurchaseCompleted: NextPage = () => {
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Boolean | undefined>(undefined);
 
   useEffect(() => {
     if (!stripePromise) {
@@ -26,19 +28,25 @@ const PurchaseCompleted: NextPage = () => {
           if (paymentIntent.paymentIntent) {
             switch (paymentIntent.paymentIntent.status) {
               case "succeeded":
-                setMessage("Thank you for your purchase!");
+                setStatus(true);
+                setMessage(
+                  "You will recieve an email shortly from The Travel Enablers detailing everything you need to know about your trip."
+                );
                 break;
               case "processing":
+                setStatus(true);
                 setMessage(
-                  "Thank you for your purchase, it is currently in progess."
+                  "Your purchase is currently in progress, and you will recieve an email shortly from The Travel Enablers detailing everything you need to know about your trip."
                 );
                 break;
               case "requires_payment_method":
+                setStatus(false);
                 setMessage(
-                  "We're sorry, your payment failed. Please try with another payment method."
+                  "We're sorry, your payment failed. Please try again with another payment method."
                 );
                 break;
               default:
+                setStatus(false);
                 setMessage(
                   "An unknown error has occured. Please try again later."
                 );
@@ -54,8 +62,16 @@ const PurchaseCompleted: NextPage = () => {
       <Head>
         <title>Purchase Completed | The Travel Enablers</title>
       </Head>
-      <main className={styles.main}>
-        <h1>{message}</h1>
+      <main>
+        <Hero imgSrc={heroImg}>
+          {status ? (
+            <h1>THANK YOU FOR YOUR PURCHASE</h1>
+          ) : (
+            <h1>THERE WAS AN ERROR WITH YOUR PURCHASE</h1>
+          )}
+          <span>{message}</span>
+          <Divider />
+        </Hero>
       </main>
     </>
   );
