@@ -5,7 +5,7 @@ export interface TypeArticleFields {
   title: Contentful.EntryFields.Symbol;
   slug: Contentful.EntryFields.Symbol;
   coverImage: Contentful.Asset;
-  article: CFRichTextTypes.Block | CFRichTextTypes.Inline;
+  content: CFRichTextTypes.Block | CFRichTextTypes.Inline;
 }
 
 export type TypeArticle = Contentful.Entry<TypeArticleFields>;
