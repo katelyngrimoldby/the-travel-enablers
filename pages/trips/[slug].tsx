@@ -6,7 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Hero from "../../components/Hero";
 import PaymentComponent from "../../components/PaymentComponent";
 import Divider from "../../icons/Divider";
-import styles from "../../styles/[slug].module.scss";
+import styles from "../../styles/[tripSlug].module.scss";
 import { Document } from "@contentful/rich-text-types";
 import { TypeGroupTrip, TypeGroupTripFields } from "../../types";
 
