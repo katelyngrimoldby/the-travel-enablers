@@ -19,8 +19,6 @@ const ArticleCard = ({ article, buttonType }: CardProps) => {
             className={styles.img}
             src={`https:${coverImage.fields.file.url}`}
             alt={coverImage.fields.description}
-            width={coverImage.fields.file.details.image.width}
-            height={coverImage.fields.file.details.image.height}
             layout="fill"
           />
         )}
@@ -29,7 +27,7 @@ const ArticleCard = ({ article, buttonType }: CardProps) => {
       <Button
         buttonType={buttonType}
         value="Learn More"
-        location={`/trips/${slug}`}
+        location={`/articles/${slug}`}
       />
     </div>
   );
