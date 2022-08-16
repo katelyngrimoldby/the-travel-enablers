@@ -61,6 +61,9 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
     return numA[0] - numB[0] || numA[1] - numB[1] || numA[2] - numB[2];
   });
 
+  const trimmedTrips = sortedTrips.slice(0, 4);
+  const trimmedArticles = articles.slice(0, 4);
+
   return (
     <>
       <Head>
@@ -137,7 +140,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
         <section className={styles.dark}>
           <h2>Upcoming Trips</h2>
           <div className={styles.cardWrapper}>
-            {sortedTrips.map((e: TypeGroupTrip) => {
+            {trimmedTrips.map((e: TypeGroupTrip) => {
               return <TripCard key={e.sys.id} trip={e} buttonType="dark" />;
             })}
           </div>
