@@ -6,7 +6,7 @@ import Hero from "../../components/Hero";
 import ArticleCard from "../../components/ArticleCard";
 import Divider from "../../icons/Divider";
 import heroImg from "../../public/hero-img.jpg";
-import styles from "../../styles/articles.module.scss";
+import styles from "../../styles/cardPage.module.scss";
 
 type PageProps = {
   articles: TypeArticle[];
