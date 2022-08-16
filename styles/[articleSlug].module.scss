@@ -1,0 +1,29 @@
+@use "variables" as v;
+
+.section {
+  position: relative;
+  padding: 3%;
+
+  background-color: v.$white;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("../public/background-img.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+  }
+  article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    line-height: 1.7;
+    color: v.$black;
+  }
+}
