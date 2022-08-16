@@ -48,8 +48,8 @@ export async function getStaticProps() {
 
 const Home: NextPage<PageProps> = ({ trips, articles }) => {
   const sortedTrips = trips.sort((a, b) => {
-    const splitA = a.fields.startDate.split("-");
-    const splitB = b.fields.startDate.split("-");
+    const splitA: string[] = a.fields.startDate.split("-");
+    const splitB: string[] = b.fields.startDate.split("-");
 
     const numA = splitA.map((e) => {
       return parseInt(e);
@@ -107,7 +107,11 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   offer payment plans so that no matter your budget, everyone
                   can make their travel dreams a reality.
                 </p>
-                <Button buttonType="light" location="/" value="View Trips" />
+                <Button
+                  buttonType="light"
+                  location="/trips"
+                  value="View Trips"
+                />
               </div>
             </div>
           </section>
