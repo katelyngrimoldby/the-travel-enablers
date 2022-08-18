@@ -63,6 +63,7 @@ const Layout = ({ children }: LayoutProps) => {
                 buttonType={"main"}
                 location="/custom-trip"
                 value="Take the Quiz"
+                onClick={clickHandler}
               />
             </li>
           </ul>
