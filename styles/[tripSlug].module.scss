@@ -3,7 +3,7 @@
 @media screen and (min-width: 0px) {
   .section {
     position: relative;
-    padding: 3%;
+    padding: 5%;
     text-align: center;
 
     background-color: v.$white;
@@ -87,6 +87,7 @@
 
 @media screen and (min-width: v.$desktop) {
   .section {
+    padding: 3%;
     .content {
       flex-direction: row;
       justify-content: space-between;

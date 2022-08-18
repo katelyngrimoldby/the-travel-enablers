@@ -3,7 +3,7 @@
 @media all and (min-width: 0) {
   .light {
     position: relative;
-    padding: 3%;
+    padding: 5%;
     text-align: center;
 
     background-color: v.$white;
@@ -51,7 +51,7 @@
   }
   .dark {
     background-color: v.$maroon;
-    padding: 3%;
+    padding: 5%;
     text-align: center;
     h2 {
       color: v.$white;
@@ -70,6 +70,7 @@
 
 @media all and (min-width: v.$desktop) {
   .light {
+    padding: 3%;
     .textWrapper {
       max-width: 50%;
     }
@@ -90,6 +91,7 @@
     }
   }
   .dark {
+    padding: 3%;
     .cardWrapper {
       flex-direction: row;
       justify-content: space-evenly;
