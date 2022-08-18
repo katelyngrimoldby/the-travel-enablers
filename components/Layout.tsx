@@ -59,7 +59,11 @@ const Layout = ({ children }: LayoutProps) => {
               <a href="#">Contact</a>
             </li>
             <li>
-              <Button buttonType={"main"} location="#" value="Take the Quiz" />
+              <Button
+                buttonType={"main"}
+                location="/custom-trip"
+                value="Take the Quiz"
+              />
             </li>
           </ul>
         </nav>
@@ -78,7 +82,9 @@ const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#">Custom Trip Planning</a>
+                  <Link href="/custom-trip">
+                    <a>Custom Trip Planning</a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/articles">
@@ -115,7 +121,14 @@ const Layout = ({ children }: LayoutProps) => {
         <div className={styles.bottomFooter}>
           <span>The Travel Enablers © 2022</span>
           <span>
-            Designed and built by <a href="#">Katelyn Grimoldby</a>
+            Designed and built by{" "}
+            <a
+              href="https://katelyngrimoldby.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Katelyn Grimoldby
+            </a>
           </span>
         </div>
       </footer>
