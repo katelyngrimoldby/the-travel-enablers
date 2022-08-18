@@ -75,7 +75,11 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           <h1>THE TRAVEL ENABLERS</h1>
           <span>How can we enable you?</span>
           <Divider />
-          <Button location="#" buttonType="main" value="Take the Quiz" />
+          <Button
+            location="/custom-trip"
+            buttonType="main"
+            value="Take the Quiz"
+          />
         </Hero>
 
         <section className={styles.light}>
@@ -133,10 +137,14 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   your honeymoon to New Zealand or is it a friends’ trip to
                   Bali? You want help getting the best deals, not worrying about
                   making all the reservations and having the gift of time handed
-                  right to you. Take the “travel test” and choose your level of
-                  service and we take care of the rest.
+                  right to you. Discover your travel style and choose your level
+                  of service; we take care of the rest.
                 </p>
-                <Button buttonType="light" location="/" value="Take the Quiz" />
+                <Button
+                  buttonType="light"
+                  location="/custom-trip"
+                  value="Take the Quiz"
+                />
               </div>
             </div>
           </section>
