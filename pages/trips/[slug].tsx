@@ -132,7 +132,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           height={images[3].fields.file.details.image?.height}
           width={images[3].fields.file.details.image?.width}
         />
-        <section className={styles.section}>
+        <section id="book" className={styles.section}>
           <WhiteBack>
             <h2>Book Your Spot</h2>
             <div className={styles.pWrapper}>
