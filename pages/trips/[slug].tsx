@@ -5,6 +5,7 @@ import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Hero from "../../components/Hero";
 import PaymentComponent from "../../components/PaymentComponent";
+import DividerImg from "../../components/DividerImg";
 import Divider from "../../icons/Divider";
 import styles from "../../styles/[tripSlug].module.scss";
 import { Document } from "@contentful/rich-text-types";
@@ -122,17 +123,12 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
             </div>
           </div>
         </section>
-        <div className={styles.dividerImg}>
-          <div className={styles.imgWrapper}>
-            <Image
-              src={`https:${images[3].fields.file.url}`}
-              alt={images[3].fields.description}
-              height={images[3].fields.file.details.image?.height}
-              width={images[3].fields.file.details.image?.width}
-              className={styles.img}
-            />
-          </div>
-        </div>
+        <DividerImg
+          imgSrc={`https:${images[3].fields.file.url}`}
+          alt={images[3].fields.description}
+          height={images[3].fields.file.details.image?.height}
+          width={images[3].fields.file.details.image?.width}
+        />
         <section className={styles.section}>
           <h2>Book Your Spot</h2>
           <div className={styles.pWrapper}>
