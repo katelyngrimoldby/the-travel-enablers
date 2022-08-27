@@ -4,6 +4,7 @@ import Head from "next/head";
 import { TypeGroupTrip, TypeGroupTripFields } from "../../types";
 import Hero from "../../components/Hero";
 import TripCard from "../../components/TripCard";
+import WhiteBack from "../../components/WhiteBack";
 import Divider from "../../icons/Divider";
 import heroImg from "../../public/hero-img.jpg";
 import styles from "../../styles/cardPage.module.scss";
@@ -40,13 +41,13 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
           <h1>UPCOMING TRIPS</h1>
           <Divider />
         </Hero>
-        <div className={styles.section}>
-          <div className={styles.wrapper}>
+        <WhiteBack>
+          <div className={styles.content}>
             {trips.map((e, i) => {
               return <TripCard key={i} trip={e} buttonType="light" />;
             })}
           </div>
-        </div>
+        </WhiteBack>
       </main>
     </>
   );

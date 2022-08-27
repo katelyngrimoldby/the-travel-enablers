@@ -4,6 +4,7 @@ import Head from "next/head";
 import { TypeArticle, TypeArticleFields } from "../../types";
 import Hero from "../../components/Hero";
 import ArticleCard from "../../components/ArticleCard";
+import WhiteBack from "../../components/WhiteBack";
 import Divider from "../../icons/Divider";
 import heroImg from "../../public/hero-img.jpg";
 import styles from "../../styles/cardPage.module.scss";
@@ -40,13 +41,13 @@ const Articles: NextPage<PageProps> = ({ articles }) => {
           <h1>ARTICLES</h1>
           <Divider />
         </Hero>
-        <div className={styles.section}>
-          <div className={styles.wrapper}>
+        <WhiteBack>
+          <div className={styles.content}>
             {articles.map((e, i) => {
               return <ArticleCard key={i} article={e} buttonType="light" />;
             })}
           </div>
-        </div>
+        </WhiteBack>
       </main>
     </>
   );
