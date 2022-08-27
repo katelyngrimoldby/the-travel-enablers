@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Hero from "../../components/Hero";
 import PaymentComponent from "../../components/PaymentComponent";
 import DividerImg from "../../components/DividerImg";
+import WhiteBack from "../../components/WhiteBack";
 import Divider from "../../icons/Divider";
 import styles from "../../styles/[tripSlug].module.scss";
 import { Document } from "@contentful/rich-text-types";
@@ -91,37 +92,39 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
         </Hero>
 
         <section id="details" className={styles.section}>
-          <h2>About The Trip</h2>
-          <div className={styles.content}>
+          <WhiteBack>
+            <h2>About The Trip</h2>
+            <div className={styles.content}>
+              <div className={styles.pWrapper}>
+                {documentToReactComponents(initialDescription as Document)}
+              </div>
+              <div className={styles.sectionImg}>
+                <Image
+                  src={`https:${images[1].fields.file.url}`}
+                  alt={images[1].fields.description}
+                  height={images[1].fields.file.details.image?.height}
+                  width={images[1].fields.file.details.image?.width}
+                />
+              </div>
+            </div>
+            <h3>Itinerary</h3>
             <div className={styles.pWrapper}>
-              {documentToReactComponents(initialDescription as Document)}
+              {documentToReactComponents(itinerary as Document)}
             </div>
-            <div className={styles.sectionImg}>
-              <Image
-                src={`https:${images[1].fields.file.url}`}
-                alt={images[1].fields.description}
-                height={images[1].fields.file.details.image?.height}
-                width={images[1].fields.file.details.image?.width}
-              />
+            <div className={styles.content}>
+              <div className={styles.sectionImg}>
+                <Image
+                  src={`https:${images[2].fields.file.url}`}
+                  alt={images[2].fields.description}
+                  height={images[2].fields.file.details.image?.height}
+                  width={images[2].fields.file.details.image?.width}
+                />
+              </div>
+              <div className={styles.pWrapper}>
+                {documentToReactComponents(closingDescription as Document)}
+              </div>
             </div>
-          </div>
-          <h3>Itinerary</h3>
-          <div className={styles.pWrapper}>
-            {documentToReactComponents(itinerary as Document)}
-          </div>
-          <div className={styles.content}>
-            <div className={styles.sectionImg}>
-              <Image
-                src={`https:${images[2].fields.file.url}`}
-                alt={images[2].fields.description}
-                height={images[2].fields.file.details.image?.height}
-                width={images[2].fields.file.details.image?.width}
-              />
-            </div>
-            <div className={styles.pWrapper}>
-              {documentToReactComponents(closingDescription as Document)}
-            </div>
-          </div>
+          </WhiteBack>
         </section>
         <DividerImg
           imgSrc={`https:${images[3].fields.file.url}`}
@@ -130,17 +133,18 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           width={images[3].fields.file.details.image?.width}
         />
         <section className={styles.section}>
-          <h2>Book Your Spot</h2>
-          <div className={styles.pWrapper}>
-            {documentToReactComponents(packageDetails as Document)}
-          </div>
-
-          <PaymentComponent
-            deposit={deposit}
-            amounts={amounts}
-            product={title}
-            packages={packageNames}
-          />
+          <WhiteBack>
+            <h2>Book Your Spot</h2>
+            <div className={styles.pWrapper}>
+              {documentToReactComponents(packageDetails as Document)}
+            </div>
+            <PaymentComponent
+              deposit={deposit}
+              amounts={amounts}
+              product={title}
+              packages={packageNames}
+            />
+          </WhiteBack>
         </section>
       </main>
     </>
