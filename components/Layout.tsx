@@ -21,11 +21,20 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <header className={styles.header}>
-        <Link href="/">
-          <a>
-            <ColorfulCompass />
-          </a>
-        </Link>
+        {visible ? (
+          <Link href="/">
+            <a onClick={clickHandler}>
+              <ColorfulCompass />
+            </a>
+          </Link>
+        ) : (
+          <Link href="/">
+            <a>
+              <ColorfulCompass />
+            </a>
+          </Link>
+        )}
+
         <button
           className={styles.menuButton}
           type="button"
