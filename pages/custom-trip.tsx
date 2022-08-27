@@ -3,6 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
+import WhiteBack from "../components/WhiteBack";
 import heroImg from "../public/custom-trip-hero-img.jpg";
 import img from "../public/custom-trip-img.jpg";
 import Divider from "../icons/Divider";
@@ -24,8 +25,8 @@ const CustomTrip: NextPage = () => {
           <h1>CUSTOM TRIP PLANNING</h1>
           <Divider />
         </Hero>
-        <div className={styles.wrapper}>
-          <section>
+        <WhiteBack>
+          <section id="pitch" className={styles.section}>
             <h2>Why Use Travel Planning</h2>
             <article className={styles.contentTop}>
               <p>
@@ -44,7 +45,7 @@ const CustomTrip: NextPage = () => {
               </div>
             </article>
           </section>
-          <section>
+          <section id="packages" className={styles.section}>
             <h2>Levels of Service</h2>
             <article>
               <p>
@@ -93,7 +94,7 @@ const CustomTrip: NextPage = () => {
               </article>
             </div>
           </section>
-          <section>
+          <section id="action" className={styles.section}>
             <h2>Start Your Custom Trip Planning</h2>
             <article className={styles.contentBottom}>
               <p>
@@ -103,7 +104,7 @@ const CustomTrip: NextPage = () => {
               <Button buttonType="main" location="/" value="Take the Quiz" />
             </article>
           </section>
-        </div>
+        </WhiteBack>
       </main>
     </>
   );
