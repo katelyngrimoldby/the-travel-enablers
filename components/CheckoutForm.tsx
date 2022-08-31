@@ -32,7 +32,7 @@ const CheckoutForm = ({ clientSecret }: FormProps) => {
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${window.location.origin}/purchase_completed`,
+          return_url: `${window.location.origin}/purchases/completed`,
         },
       });
       if (error) {
