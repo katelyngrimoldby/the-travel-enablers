@@ -18,7 +18,10 @@ import Divider from "../icons/Divider";
 import heroImg from "../public/hero-img.jpg";
 import gtImg from "../public/group-trip-img.jpg";
 import ctImg from "../public/custom-trip-img.jpg";
+import abtImg from "../public/mandy_and_ian.jpg";
+import ctaImg from "../public/cta-img.jpg";
 import styles from "../styles/index.module.scss";
+import DividerImg from "../components/DividerImg";
 
 type PageProps = {
   trips: TypeGroupTrip[];
@@ -86,13 +89,13 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
         <section id="services" className={styles.light}>
           <WhiteBack>
             <h2>What We Do</h2>
-            <section className={styles.content}>
+            <section id="groupTrips" className={styles.content}>
               <h3>Small Group Trips</h3>
               <div className={styles.left}>
                 <div className={styles.sectionImg}>
                   <Image src={gtImg} alt="Group sitting under table on beach" />
                 </div>
-                <div id="groupTrips" className={styles.textWrapper}>
+                <div className={styles.textWrapper}>
                   <p>
                     Let’s be honest, some places are just better in a group
                     dynamic! We create boutique travel experiences so that if
@@ -169,9 +172,44 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
             </>
           ) : (
             <div className={styles.cardWrapper}>
-              <span>There are no articles right now</span>
+              <span>There are no trips right now</span>
             </div>
           )}
+        </section>
+        <section id="about" className={styles.light}>
+          <WhiteBack>
+            <h2>About Us</h2>
+            <div className={styles.left}>
+              <div className={styles.sectionImg}>
+                <Image src={abtImg} alt="Mandy and Ian on a boat" />
+              </div>
+              <div className={styles.textWrapper}>
+                <p>
+                  We are your Travel Enablers. Mandy & Ian! We both grew up in
+                  Alberta, Canada and that’s about where our similarities end!
+                  They say opposites attract, we are living proof.
+                </p>
+                <p>
+                  Ian’s travel style is as a vacationer. He travels maybe 4
+                  weeks a year; when he does travel it’s usually with Mandy and
+                  it feels like a time to relax and rejuvenate. He loves great
+                  food, some downtime on the beach or by the pool, cold beers
+                  and nice wine! Sprinkle in a few adventures and he is happy.
+                </p>
+                <p>
+                  Mandy’s love of travel and planning is second only to her love
+                  of family. When she isn’t raising kids you will find her
+                  planning her next adventure, and even at times when she is on
+                  an adventure she will already be planning her next one.
+                </p>
+                <Button
+                  buttonType="light"
+                  value="Learn More"
+                  location="/about"
+                />
+              </div>
+            </div>
+          </WhiteBack>
         </section>
         <section id="articles" className={styles.dark}>
           <h2>Articles</h2>
@@ -197,6 +235,16 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
             </div>
           )}
         </section>
+        <DividerImg imgSrc={ctaImg}>
+          <h2>Want a Trip With None of the Work?</h2>
+          <span>We can enable that for you</span>
+          <Divider />
+          <Button
+            buttonType="main"
+            value="Take the Quiz"
+            location="/custom-trip"
+          />
+        </DividerImg>
       </main>
     </>
   );
