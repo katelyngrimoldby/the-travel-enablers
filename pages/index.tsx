@@ -235,16 +235,18 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
             </div>
           )}
         </section>
-        <DividerImg imgSrc={ctaImg}>
-          <h2>Want a Trip With None of the Work?</h2>
-          <span>We can enable that for you</span>
-          <Divider />
-          <Button
-            buttonType="main"
-            value="Take the Quiz"
-            location="/custom-trip"
-          />
-        </DividerImg>
+        <section id="cta">
+          <DividerImg imgSrc={ctaImg}>
+            <h2>Want a Trip With None of the Work?</h2>
+            <span>We can enable that for you</span>
+            <Divider />
+            <Button
+              buttonType="main"
+              value="Take the Quiz"
+              location="/custom-trip"
+            />
+          </DividerImg>
+        </section>
       </main>
     </>
   );
