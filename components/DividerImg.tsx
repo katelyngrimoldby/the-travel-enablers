@@ -18,9 +18,15 @@ const DividerImg = ({
 }: DividerImgProps) => {
   return (
     <div className={styles.dividerImg}>
-      {children}
+      <div className={styles.content}>{children}</div>
       <div className={styles.imgWrapper}>
-        <Image src={imgSrc} alt={alt} height={height} width={width} />
+        <Image
+          src={imgSrc}
+          alt={alt}
+          height={height}
+          width={width}
+          className={styles.img}
+        />
       </div>
     </div>
   );
