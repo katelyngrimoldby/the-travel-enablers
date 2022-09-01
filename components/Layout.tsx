@@ -62,10 +62,14 @@ const Layout = ({ children }: LayoutProps) => {
               </Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link href="/about">
+                <a onClick={clickHandler}>About</a>
+              </Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link href="/contact">
+                <a onClick={clickHandler}>Contact</a>
+              </Link>
             </li>
             <li>
               <Button
@@ -102,27 +106,46 @@ const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#">About</a>
+                  <Link href="/about">
+                    <a>About</a>
+                  </Link>
                 </li>
-                {/* <li>
-                  <a href="#">Contact</a>
-                </li> */}
               </ul>
             </section>
             <section>
               <h2>Get In Touch</h2>
               <ul>
                 <li>
-                  <a href="#">Instagram</a>
+                  <Link href="/contact">
+                    <a>Contact</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Facebook</a>
+                  <a
+                    href="https://www.instagram.com/the_travel_enablers/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Instagram
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Phone</a>
+                  <a
+                    href="https://www.facebook.com/The-Travel-Enablers-108344001925084/?fref=tag"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Facebook
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Email</a>
+                  <a
+                    href="mailto:travelenablers@gmail.com"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Email
+                  </a>
                 </li>
               </ul>
             </section>
@@ -138,6 +161,11 @@ const Layout = ({ children }: LayoutProps) => {
               rel="noreferrer"
             >
               Katelyn Grimoldby
+            </a>
+          </span>
+          <span>
+            <a href="../privacy-policy.pdf" target="_blank" rel="noreferrer">
+              Privacy Policy
             </a>
           </span>
         </div>
