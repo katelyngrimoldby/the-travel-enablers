@@ -21,7 +21,7 @@ const About: NextPage = () => {
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
-          <h1>About Us</h1>
+          <h1>ABOUT US</h1>
           <Divider />
         </Hero>
         <WhiteBack>
