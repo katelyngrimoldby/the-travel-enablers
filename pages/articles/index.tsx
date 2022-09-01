@@ -43,9 +43,13 @@ const Articles: NextPage<PageProps> = ({ articles }) => {
         </Hero>
         <WhiteBack>
           <div className={styles.content}>
-            {articles.map((e, i) => {
-              return <ArticleCard key={i} article={e} buttonType="light" />;
-            })}
+            {articles.length < 1 ? (
+              <p>There are no articles right now.</p>
+            ) : (
+              articles.map((e, i) => {
+                return <ArticleCard key={i} article={e} buttonType="light" />;
+              })
+            )}
           </div>
         </WhiteBack>
       </main>
