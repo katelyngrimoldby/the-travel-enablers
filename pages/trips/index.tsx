@@ -43,9 +43,13 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
         </Hero>
         <WhiteBack>
           <div className={styles.content}>
-            {trips.map((e, i) => {
-              return <TripCard key={i} trip={e} buttonType="light" />;
-            })}
+            {trips.length < 1 ? (
+              <p>There are no upcoming trips right now.</p>
+            ) : (
+              trips.map((e, i) => {
+                return <TripCard key={i} trip={e} buttonType="light" />;
+              })
+            )}
           </div>
         </WhiteBack>
       </main>
