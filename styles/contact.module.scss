@@ -1,0 +1,76 @@
+@use "variables" as v;
+
+.p {
+  color: v.$black;
+  margin-bottom: 3rem;
+  text-align: center;
+  a {
+    color: v.$maroon;
+    &:hover {
+      color: v.$orange;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  button {
+    display: block;
+    background-color: v.$orange;
+    color: v.$white !important;
+    padding: 6px 12px;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 15px 0;
+
+    font-family: v.$body;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  label {
+    font-family: v.$header;
+    font-size: 1.3rem;
+    color: v.$teal;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  input,
+  textarea {
+    font-family: v.$body;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #fffbf6;
+    border: none;
+    border-radius: 12px;
+    color: v.$black;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 3px hsla(356, 98%, 17%, 25%),
+        0 0 0 1px hsla(356, 98%, 17%, 50%);
+    }
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+}
