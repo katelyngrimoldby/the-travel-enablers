@@ -20,6 +20,11 @@ const Contact: NextPage = () => {
     setState((prevState) => ({ ...prevState, [e.target.id]: e.target.value }));
   };
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setState({ fName: "", email: "", subject: "", message: "" });
+  };
+
   return (
     <>
       <Head>
@@ -42,11 +47,17 @@ const Contact: NextPage = () => {
             we&apos;ll get back to you as soon as possible. To plan a trip,
             please
             <Link href="/custom-trip">
-              <a>take the quiz</a>
+              <a>&#x20;take the quiz</a>
             </Link>
             .
           </p>
-          <form name="contact" data-netlify="true" className={styles.form}>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            onSubmit={handleSubmit}
+            className={styles.form}
+          >
             <div className={styles.infoWrapper}>
               <div className={styles.inputWrapper}>
                 <label htmlFor="fName">Name</label>
@@ -81,9 +92,12 @@ const Contact: NextPage = () => {
             </div>
             <div className={styles.inputWrapper}>
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" onChange={handleChange}>
-                {state.message}
-              </textarea>
+              <textarea
+                name="message"
+                id="message"
+                value={state.message}
+                onChange={handleChange}
+              ></textarea>
             </div>
             <button type="submit">Send</button>
           </form>
