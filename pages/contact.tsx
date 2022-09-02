@@ -54,6 +54,7 @@ const Contact: NextPage = () => {
           <form
             name="contact"
             method="POST"
+            action="/test"
             data-netlify="true"
             onSubmit={handleSubmit}
             className={styles.form}
