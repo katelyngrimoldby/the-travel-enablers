@@ -21,7 +21,6 @@ const Contact: NextPage = () => {
   };
 
   const handleSubmit = (e: any) => {
-    e.preventDefault();
     setState({ fName: "", email: "", subject: "", message: "" });
   };
 
