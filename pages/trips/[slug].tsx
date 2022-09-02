@@ -66,6 +66,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
     packagePrices,
     images,
     title,
+    slug,
   } = trip.fields;
 
   //prices as numbers to pass to PaymentComponent
@@ -78,6 +79,18 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
       <Head>
         <title>{`${title} | The Travel Enablers`}</title>
         <meta name="description" content={plainDescription} />
+        <meta property="og:title" content={`${title} | The Travel Enablers`} />
+        <meta property="og:description" content={plainDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${window.location.origin}/${slug}`} />
+        <meta
+          property="og:image"
+          content={`https:${images[0].fields.file.url}`}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`https:${images[0].fields.file.url}`}
+        />
       </Head>
 
       <main>
