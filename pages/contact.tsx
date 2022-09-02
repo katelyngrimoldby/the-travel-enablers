@@ -24,6 +24,12 @@ const Contact: NextPage = () => {
     <>
       <Head>
         <title>Contact Us | The Travel Enablers</title>
+
+        <meta property="og:title" content="Contact Us | The Travel Enablers" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
@@ -34,7 +40,7 @@ const Contact: NextPage = () => {
           <p className={styles.p}>
             Questions? Suggestions? Collaborations? Fill out the form below and
             we&apos;ll get back to you as soon as possible. To plan a trip,
-            please{" "}
+            please
             <Link href="/custom-trip">
               <a>take the quiz</a>
             </Link>
