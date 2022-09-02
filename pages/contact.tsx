@@ -53,12 +53,12 @@ const Contact: NextPage = () => {
           <form
             name="contact"
             method="POST"
-            action="/test"
+            action="/"
             data-netlify="true"
             onSubmit={handleSubmit}
             className={styles.form}
           >
-            <input type="hidden" name="contact" value="contactForm" />
+            <input type="hidden" name="form-name" value="contact" />
             <div className={styles.infoWrapper}>
               <div className={styles.inputWrapper}>
                 <label htmlFor="fName">Name</label>
