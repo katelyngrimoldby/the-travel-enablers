@@ -3,3 +3,5 @@ Allow: /
 
 User-agent: *
 Disallow: /purchases/
+User-agent: *
+Disallow: /form-submitted
