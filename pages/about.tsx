@@ -18,6 +18,16 @@ const About: NextPage = () => {
           name="description"
           content="We are your Travel Enablers. Mandy & Ian! We both grew up in Alberta, Canada and that’s about where our similarities end! They say opposites attract, we are living proof."
         />
+
+        <meta property="og:title" content="About Us | The Travel Enablers" />
+        <meta
+          property="og:description"
+          content="We are your Travel Enablers. Mandy & Ian! We both grew up in Alberta, Canada and that’s about where our similarities end! They say opposites attract, we are living proof."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
