@@ -5,7 +5,6 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["images.ctfassets.net"],
-    minimumCacheTTL: 31536000,
   },
 };
 
