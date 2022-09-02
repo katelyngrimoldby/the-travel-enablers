@@ -4,7 +4,7 @@ import styles from "../styles/DividerImg.module.scss";
 type DividerImgProps = {
   children?: React.ReactNode;
   imgSrc: StaticImageData | string;
-  alt?: string;
+  alt: string;
   width?: number;
   height?: number;
 };
