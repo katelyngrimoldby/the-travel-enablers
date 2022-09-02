@@ -58,6 +58,7 @@ const Contact: NextPage = () => {
             onSubmit={handleSubmit}
             className={styles.form}
           >
+            <input type="hidden" name="contact" value="contactForm" />
             <div className={styles.infoWrapper}>
               <div className={styles.inputWrapper}>
                 <label htmlFor="fName">Name</label>
