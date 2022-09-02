@@ -72,6 +72,21 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
     <>
       <Head>
         <title>Home | The Travel Enablers</title>
+
+        <meta
+          name="description"
+          content="Welcome aboard! We love to travel and we are here to help you travel, too! We specialize in hosting small group trips all around the world, and also help you plan the trip of your dreams. We do all the work, so you can have all the fun!"
+        />
+
+        <meta property="og:title" content="Home | The Travel Enablers" />
+        <meta
+          property="og:description"
+          content="Welcome aboard! We love to travel and we are here to help you travel, too! We specialize in hosting small group trips all around the world, and also help you plan the trip of your dreams. We do all the work, so you can have all the fun!"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="" />
       </Head>
 
       <main>
