@@ -9,21 +9,6 @@ import heroImg from "../public/hero-img.jpg";
 import styles from "../styles/contact.module.scss";
 
 const Contact: NextPage = () => {
-  const [state, setState] = useState({
-    fName: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (e: any) => {
-    setState((prevState) => ({ ...prevState, [e.target.id]: e.target.value }));
-  };
-
-  const handleSubmit = (e: any) => {
-    setState({ fName: "", email: "", subject: "", message: "" });
-  };
-
   return (
     <>
       <Head>
@@ -55,50 +40,26 @@ const Contact: NextPage = () => {
             method="POST"
             action="/"
             data-netlify="true"
-            onSubmit={handleSubmit}
             className={styles.form}
           >
             <input type="hidden" name="form-name" value="contact" />
             <div className={styles.infoWrapper}>
               <div className={styles.inputWrapper}>
                 <label htmlFor="fName">Name</label>
-                <input
-                  name="name"
-                  id="fName"
-                  type="text"
-                  value={state.fName}
-                  onChange={handleChange}
-                />
+                <input name="name" id="fName" type="text" />
               </div>
               <div className={styles.inputWrapper}>
                 <label htmlFor="email">Email</label>
-                <input
-                  name="email"
-                  id="email"
-                  type="email"
-                  value={state.email}
-                  onChange={handleChange}
-                />
+                <input name="email" id="email" type="email" />
               </div>
             </div>
             <div className={styles.inputWrapper}>
               <label htmlFor="subject">Subject</label>
-              <input
-                name="subject"
-                id="subject"
-                type="text"
-                value={state.subject}
-                onChange={handleChange}
-              />
+              <input name="subject" id="subject" type="text" />
             </div>
             <div className={styles.inputWrapper}>
               <label htmlFor="message">Message</label>
-              <textarea
-                name="message"
-                id="message"
-                value={state.message}
-                onChange={handleChange}
-              ></textarea>
+              <textarea name="message" id="message"></textarea>
             </div>
             <button type="submit">Send</button>
           </form>
