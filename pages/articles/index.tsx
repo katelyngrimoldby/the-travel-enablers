@@ -35,6 +35,19 @@ const Articles: NextPage<PageProps> = ({ articles }) => {
     <>
       <Head>
         <title>Articles | The Travel Enablers</title>
+        <meta
+          name="description"
+          content="Read up on all the travel-related articles you can here."
+        />
+        <meta property="og:title" content="Articles | The Travel Enablers" />
+        <meta
+          property="og:description"
+          content="Read up on all the travel-related articles you can here."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
