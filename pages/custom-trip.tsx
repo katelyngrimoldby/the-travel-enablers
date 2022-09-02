@@ -16,9 +16,21 @@ const CustomTrip: NextPage = () => {
         <title>Custom Trip Planning | The Travel Enablers</title>
         <meta
           name="description"
-          content="Maybe you don’t have the time or desire to plan out your next vacation. We can handle as much or as little as you like. We are The Travel Enablers, after all! Is your family planning a road trip down the Pacific Coast Highway or you want help with your honeymoon to New Zealand or is it a friends’ trip to Bali? You want help getting the best deals, not worrying about making all the reservations and having the gift of time handed right to you. Discover your travel style and choose your level of service; we take care of the rest.
-"
+          content="Maybe you don’t have the time or desire to plan out your next vacation. We can handle as much or as little as you like. You want help getting the best deals, not worrying about making all the reservations and having the gift of time handed right to you. Discover your travel style and choose your level of service; we take care of the rest."
         />
+
+        <meta
+          property="og:title"
+          content="Custom Trip Planning | The Travel Enablers"
+        />
+        <meta
+          property="og:description"
+          content="Maybe you don’t have the time or desire to plan out your next vacation. We can handle as much or as little as you like. You want help getting the best deals, not worrying about making all the reservations and having the gift of time handed right to you. Discover your travel style and choose your level of service; we take care of the rest."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
