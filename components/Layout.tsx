@@ -29,7 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
           </Link>
         ) : (
           <Link href="/">
-            <a>
+            <a aria-label="Go to Home">
               <ColorfulCompass />
             </a>
           </Link>
@@ -39,6 +39,7 @@ const Layout = ({ children }: LayoutProps) => {
           className={styles.menuButton}
           type="button"
           onClick={clickHandler}
+          aria-label="Open nav menu"
         >
           <MenuOpen />
         </button>
@@ -47,6 +48,7 @@ const Layout = ({ children }: LayoutProps) => {
             className={styles.menuButton}
             type="button"
             onClick={clickHandler}
+            aria-label="Close nav menu"
           >
             <MenuClose />
           </button>
