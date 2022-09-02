@@ -52,12 +52,23 @@ type PageProps = {
 };
 
 const Article: NextPage<PageProps> = ({ article }) => {
-  const { title, coverImage, content } = article.fields;
+  const { title, coverImage, content, slug } = article.fields;
 
   return (
     <>
       <Head>
         <title>{`${title} | The Travel Enablers`}</title>
+        <meta property="og:title" content={`${title} | The Travel Enablers`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${window.location.origin}/${slug}`} />
+        <meta
+          property="og:image"
+          content={`https:${coverImage.fields.file.url}`}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`https:${coverImage.fields.file.url}`}
+        />
       </Head>
       <main>
         <Hero
