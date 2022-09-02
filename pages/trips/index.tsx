@@ -35,6 +35,22 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
     <>
       <Head>
         <title>Upcoming Trips | The Travel Enablers</title>
+        <meta
+          name="description"
+          content="View all of the upcoming group trips here. Pick your favourite and reserve your spot!"
+        />
+        <meta
+          property="og:title"
+          content="Upcoming Trips | The Travel Enablers"
+        />
+        <meta
+          property="og:description"
+          content="View all of the upcoming group trips here. Pick your favourite and reserve your spot!"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:secure_url" content="" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
