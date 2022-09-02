@@ -44,7 +44,7 @@
         margin-top: 25%;
       }
       li {
-        margin-bottom: 10%;
+        margin-bottom: 20%;
       }
       &.visible {
         transform: translate(0%);
@@ -62,6 +62,9 @@
     padding-top: 5%;
     h2 {
       color: v.$teal;
+    }
+    li {
+      margin-bottom: 10%;
     }
   }
   .bottomFooter {
@@ -89,6 +92,9 @@
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+    }
+    li {
+      margin-bottom: 3%;
     }
   }
 }
