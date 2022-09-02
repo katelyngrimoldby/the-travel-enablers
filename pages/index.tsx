@@ -251,7 +251,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           )}
         </section>
         <section id="cta">
-          <DividerImg imgSrc={ctaImg}>
+          <DividerImg imgSrc={ctaImg} alt="">
             <h2>Want a Trip With None of the Work?</h2>
             <span>We can enable that for you</span>
             <Divider />
