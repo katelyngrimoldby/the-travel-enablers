@@ -45,11 +45,11 @@ const CustomTrip: NextPage = () => {
                 Maybe you don’t have the time or desire to plan out your next
                 vacation. We can handle as much or as little as you like. We are
                 The Travel Enablers, after all! Is your family planning a road
-                trip down the Pacific Coast Highway or you want help with your
-                honeymoon to New Zealand or is it a friends’ trip to Bali? You
-                want help getting the best deals, not worrying about making all
-                the reservations and having the gift of time handed right to
-                you. Discover your travel style and choose your level of
+                trip down the Pacific Coast Highway or do you want help with
+                your honeymoon to New Zealand or is it a friends’ trip to Bali?
+                You want help getting the best deals, not worrying about making
+                all the reservations, and having the gift of time handed right
+                to you. Discover your travel style and choose your level of
                 service; we take care of the rest.
               </p>
               <div className={styles.imgWrapper}>
@@ -72,10 +72,10 @@ const CustomTrip: NextPage = () => {
                 <p>
                   This is for those that have a clear idea of what they want and
                   need but would rather not spend their time looking for the
-                  best fit. Through this option we will present to you the best
-                  flight options, show you the best accommodations and a list of
-                  local recommendations. All you have to do is book it with your
-                  credit card.
+                  best fit. Through this option, we will present to you the best
+                  flight options, show you the best accommodations, and a list
+                  of local recommendations. All you have to do is book it with
+                  your credit card.
                 </p>
               </article>
               <article className={styles.card}>
@@ -95,13 +95,13 @@ const CustomTrip: NextPage = () => {
                 <h3>Take My Money Package - $499</h3>
                 <p>
                   We do it all, you only need to show up! Planning travel is
-                  time consuming, sometimes tedious and for a lot of people it
+                  time-consuming, sometimes tedious and for a lot of people, it
                   makes the trip part less enjoyable. That’s why we have this
                   offering where we do it all from all forms of transport,
-                  interactive maps, accommodations, itinerary, booking tours /
-                  activities / appointments and a checklist of what to do before
-                  travel full of helpful information. It is a truly bespoke
-                  experience.
+                  interactive maps, accommodations, itinerary, booking
+                  tours/activities/appointments, and a checklist of what to do
+                  before travel full of helpful information. It is a truly
+                  bespoke experience.
                 </p>
               </article>
             </div>
