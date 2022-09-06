@@ -18,7 +18,8 @@ const Hero = ({ children, imgSrc, width, height }: HeroProps) => {
             src={imgSrc}
             alt=""
             className={styles.heroImg}
-            layout="responsive"
+            layout="fill"
+            objectFit="cover"
             priority={true}
             height={height}
             width={width}
@@ -28,7 +29,8 @@ const Hero = ({ children, imgSrc, width, height }: HeroProps) => {
             src={imgSrc}
             alt=""
             className={styles.heroImg}
-            layout="responsive"
+            layout="fill"
+            objectFit="cover"
             priority={true}
           />
         )}

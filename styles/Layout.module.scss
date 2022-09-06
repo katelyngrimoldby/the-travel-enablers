@@ -3,7 +3,6 @@
 @media all and (min-width: 0px) {
   .header,
   .topFooter {
-    background-color: v.$white;
     padding: 3%;
     z-index: 1;
     a {
@@ -18,10 +17,14 @@
   }
 
   .header {
+    padding: 0 3%;
+    position: absolute;
+    width: 100vw;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: v.$white;
+    background-color: none;
     .menuButton {
       background: none;
       border: none;
@@ -30,7 +33,7 @@
     nav {
       position: fixed;
       top: 0;
-      right: 00;
+      right: 0;
       background-color: v.$white;
       height: 100vh;
       width: 60%;
@@ -54,6 +57,7 @@
   }
 
   .topFooter {
+    background-color: v.$white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +106,7 @@
 @media all and (min-width: v.$desktop) {
   .header {
     flex-grow: 1;
-    padding: 2%;
+    padding: 4% 3%;
     .menuButton {
       display: none;
     }
@@ -113,8 +117,12 @@
       padding: 0;
       width: 70%;
       max-width: 800px;
+      background: none;
       &.visible {
         box-shadow: none;
+      }
+      a {
+        color: v.$white;
       }
       ul {
         margin: 0;
