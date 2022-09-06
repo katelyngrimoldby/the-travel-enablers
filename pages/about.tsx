@@ -52,13 +52,13 @@ const About: NextPage = () => {
                   Her love of travel and planning is second only to her love of
                   family. When she isn’t raising kids you will find her planning
                   her next adventure, and even at times when she is on an
-                  adventure she will already be planning her next one.
+                  adventure, she will already be planning her next one.
                 </p>
                 <p>
                   She explored the world including Europe, South America, Asia,
                   and North America. The Camino trail from Portugal to Spain and
-                  Bali are two of Mandy’s favourites and while home base may be
-                  in Alberta, Canada, Puerto Vallarta has Mandy’s heart and
+                  Bali are two of Mandy’s favourites and while her home base may
+                  be in Alberta, Canada, Puerto Vallarta has Mandy’s heart and
                   eventually will be our home.
                 </p>
                 <p>-Ian</p>
@@ -74,17 +74,17 @@ const About: NextPage = () => {
               <div className={styles.textWrapper}>
                 <p>
                   My husband Ian is probably the most organized person I know.
-                  He really is able to keep it all together via spreadsheets and
-                  timelines. It’s his gift! In his “day job” he does this on a
+                  He really can keep it all together via spreadsheets and
+                  timelines. It’s his gift! In his “day job,” he does this on a
                   large scale. He keeps me balanced this way. He does all the
-                  behind the scenes for Travel Enablers.
+                  behind-the-scenes for The Travel Enablers.
                 </p>
                 <p>
                   Ian’s travel style is as a vacationer. By that, I mean he
                   travels maybe 4 weeks a year and when he does it’s usually
                   with me and it feels like a time to relax and rejuvenate. He
                   loves great food, some downtime on the beach or by the pool,
-                  cold beers and nice wine! Sprinkle in a few adventures and he
+                  cold beers, and nice wine! Sprinkle in a few adventures and he
                   is happy.
                 </p>
                 <p>-Mandy</p>
