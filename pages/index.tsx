@@ -115,16 +115,16 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                     Let’s be honest, some places are just better in a group
                     dynamic! We create boutique travel experiences so that if
                     you’re a duo or solo traveler, you will have the opportunity
-                    to share the wonders of the world in our small groups hosted
-                    & curated by Mandy McPherson.
+                    to share the wonders of the world. Each small group
+                    experience is curated & hosted by Mandy McPherson.
                   </p>
                   <p>
                     She has traveled the globe and from her years of exploring
-                    does all the research, planning, booking and organizing.
+                    does all the research, planning, booking, and organizing.
                     From active adventures to luxurious long weekends away, at
-                    Travel Enablers we offer an array of bespoke vacations.
+                    The Travel Enablers, we offer an array of bespoke vacations.
                     Everything is thought of: accommodations, transport, tours,
-                    must see/eat/do lists and even off the beaten path
+                    must-see/eat/do lists and even off-the-beaten-path
                     recommendations. We even offer payment plans so that no
                     matter your budget, everyone can make their travel dreams a
                     reality.
@@ -132,7 +132,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   <Button
                     buttonType="light"
                     location="/trips"
-                    value="View Trips"
+                    value="Take a Trip"
                   />
                 </div>
               </div>
@@ -151,18 +151,18 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                     Maybe you don’t have the time or desire to plan out your
                     next vacation. We can handle as much or as little as you
                     like. We are The Travel Enablers, after all! Is your family
-                    planning a road trip down the Pacific Coast Highway or you
-                    want help with your honeymoon to New Zealand or is it a
+                    planning a road trip down the Pacific Coast Highway or do
+                    you want help with your honeymoon to New Zealand or is it a
                     friends’ trip to Bali? You want help getting the best deals,
-                    not worrying about making all the reservations and having
+                    not worrying about making all the reservations, and having
                     the gift of time handed right to you. Discover your travel
                     style and choose your level of service; we take care of the
                     rest.
                   </p>
                   <Button
                     buttonType="light"
-                    location="/custom-trip"
-                    value="Take the Quiz"
+                    location="/custom-trip#packages"
+                    value="Choose Your Service Level"
                   />
                 </div>
               </div>
@@ -179,11 +179,13 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   return <TripCard key={e.sys.id} trip={e} buttonType="dark" />;
                 })}
               </div>
-              <Button
-                buttonType="main"
-                location="/trips"
-                value="View All Trips"
-              />
+              {trips.length > 3 && (
+                <Button
+                  buttonType="main"
+                  location="/trips"
+                  value="View All Trips"
+                />
+              )}
             </>
           ) : (
             <div className={styles.cardWrapper}>
@@ -204,22 +206,9 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   Alberta, Canada and that’s about where our similarities end!
                   They say opposites attract, we are living proof.
                 </p>
-                <p>
-                  Ian’s travel style is as a vacationer. He travels maybe 4
-                  weeks a year; when he does travel it’s usually with Mandy and
-                  it feels like a time to relax and rejuvenate. He loves great
-                  food, some downtime on the beach or by the pool, cold beers
-                  and nice wine! Sprinkle in a few adventures and he is happy.
-                </p>
-                <p>
-                  Mandy’s love of travel and planning is second only to her love
-                  of family. When she isn’t raising kids you will find her
-                  planning her next adventure, and even at times when she is on
-                  an adventure she will already be planning her next one.
-                </p>
                 <Button
                   buttonType="light"
-                  value="Learn More"
+                  value="More About Us"
                   location="/about"
                 />
               </div>
@@ -238,11 +227,13 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   );
                 })}
               </div>
-              <Button
-                buttonType="main"
-                location="/articles"
-                value="View All Articles"
-              />
+              {articles.length > 3 && (
+                <Button
+                  buttonType="main"
+                  location="/articles"
+                  value="View All Articles"
+                />
+              )}
             </>
           ) : (
             <div className={styles.cardWrapper}>
@@ -252,8 +243,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
         </section>
         <section id="cta">
           <DividerImg imgSrc={ctaImg} alt="">
-            <h2>Want a Trip With None of the Work?</h2>
-            <span>We can enable that for you</span>
+            <h2>Planning Your Custom Vacation With None of the Work</h2>
             <Divider />
             <Button
               buttonType="main"
