@@ -36,9 +36,9 @@
   .textWrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     color: v.$black;
-    text-align: left;
     line-height: 1.7;
   }
   .left,
@@ -47,6 +47,7 @@
     flex-direction: column;
     align-items: center;
     margin-block: 1.5rem;
+    text-align: left;
   }
 }
 
@@ -56,10 +57,7 @@
 @media all and (min-width: v.$desktop) {
   .textWrapper {
     max-width: 50%;
-  }
-  .left,
-  .right {
-    text-align: left;
+    align-items: flex-start;
   }
   .left {
     flex-direction: row;
