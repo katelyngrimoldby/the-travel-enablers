@@ -5,7 +5,10 @@ import Button from "../components/Button";
 import Hero from "../components/Hero";
 import WhiteBack from "../components/WhiteBack";
 import heroImg from "../public/custom-trip-hero-img.jpg";
-import img from "../public/custom-trip-img.jpg";
+import img1 from "../public/custom-trip-1.jpg";
+import img2 from "../public/custom-trip-2.jpg";
+import img3 from "../public/custom-trip-3.jpg";
+import img4 from "../public/custom-trip-4.jpg";
 import Divider from "../icons/Divider";
 import styles from "../styles/customTrip.module.scss";
 
@@ -53,7 +56,7 @@ const CustomTrip: NextPage = () => {
                 service; we take care of the rest.
               </p>
               <div className={styles.imgWrapper}>
-                <Image src={img} alt="View of breach from behind palm trees" />
+                <Image src={img1} alt="View of breach from behind palm trees" />
               </div>
             </article>
           </section>
@@ -77,7 +80,14 @@ const CustomTrip: NextPage = () => {
                   of local recommendations. All you have to do is book it with
                   your credit card.
                 </p>
+                <div className={styles.cardImgWrapper}>
+                  <Image
+                    src={img2}
+                    alt="View of breach from behind palm trees"
+                  />
+                </div>
               </article>
+
               <article className={styles.card}>
                 <h3>Get Me There Package - $299</h3>
                 <p>
@@ -90,7 +100,14 @@ const CustomTrip: NextPage = () => {
                   you updated on international travel restrictions &
                   suggestions.
                 </p>
+                <div className={styles.cardImgWrapper}>
+                  <Image
+                    src={img3}
+                    alt="View of breach from behind palm trees"
+                  />
+                </div>
               </article>
+
               <article className={styles.card}>
                 <h3>Take My Money Package - $499</h3>
                 <p>
@@ -103,6 +120,12 @@ const CustomTrip: NextPage = () => {
                   before travel full of helpful information. It is a truly
                   bespoke experience.
                 </p>
+                <div className={styles.cardImgWrapper}>
+                  <Image
+                    src={img4}
+                    alt="View of breach from behind palm trees"
+                  />
+                </div>
               </article>
             </div>
           </section>
