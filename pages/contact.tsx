@@ -5,7 +5,7 @@ import Link from "next/link";
 import Hero from "../components/Hero";
 import WhiteBack from "../components/WhiteBack";
 import Divider from "../icons/Divider";
-import heroImg from "../public/hero-img.jpg";
+import heroImg from "../public/contact-hero-img.jpg";
 import styles from "../styles/contact.module.scss";
 
 const Contact: NextPage = () => {
