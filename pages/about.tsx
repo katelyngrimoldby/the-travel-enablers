@@ -4,7 +4,7 @@ import Image from "next/image";
 import Hero from "../components/Hero";
 import WhiteBack from "../components/WhiteBack";
 import Divider from "../icons/Divider";
-import heroImg from "../public/hero-img.jpg";
+import heroImg from "../public/about-hero-img.jpg";
 import mandy from "../public/mandy.jpg";
 import ian from "../public/ian.jpg";
 import styles from "../styles/about.module.scss";
