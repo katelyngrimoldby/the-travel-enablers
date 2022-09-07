@@ -56,7 +56,7 @@ const CustomTrip: NextPage = () => {
                 service; we take care of the rest.
               </p>
               <div className={styles.imgWrapper}>
-                <Image src={img1} alt="View of breach from behind palm trees" />
+                <Image src={img1} alt="Picnic in a city" />
               </div>
             </article>
           </section>
@@ -81,10 +81,7 @@ const CustomTrip: NextPage = () => {
                   your credit card.
                 </p>
                 <div className={styles.cardImgWrapper}>
-                  <Image
-                    src={img2}
-                    alt="View of breach from behind palm trees"
-                  />
+                  <Image src={img2} alt="Group around statues" />
                 </div>
               </article>
 
@@ -101,10 +98,7 @@ const CustomTrip: NextPage = () => {
                   suggestions.
                 </p>
                 <div className={styles.cardImgWrapper}>
-                  <Image
-                    src={img3}
-                    alt="View of breach from behind palm trees"
-                  />
+                  <Image src={img3} alt="Paddleboarders by small island" />
                 </div>
               </article>
 
@@ -121,10 +115,7 @@ const CustomTrip: NextPage = () => {
                   bespoke experience.
                 </p>
                 <div className={styles.cardImgWrapper}>
-                  <Image
-                    src={img4}
-                    alt="View of breach from behind palm trees"
-                  />
+                  <Image src={img4} alt="Group by Arizona cliff" />
                 </div>
               </article>
             </div>
