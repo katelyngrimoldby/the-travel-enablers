@@ -6,7 +6,7 @@ import Hero from "../../components/Hero";
 import TripCard from "../../components/TripCard";
 import WhiteBack from "../../components/WhiteBack";
 import Divider from "../../icons/Divider";
-import heroImg from "../../public/hero-img.jpg";
+import heroImg from "../../public/cardPage-hero-img.jpg";
 import styles from "../../styles/cardPage.module.scss";
 
 type PageProps = {
