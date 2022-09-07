@@ -32,6 +32,12 @@
       line-height: 1.7;
       margin-top: 1rem;
     }
+    .cardImgWrapper {
+      margin: 0 auto;
+      margin-top: 1rem;
+      width: 80%;
+      max-width: 500px;
+    }
     .card {
       background-color: v.$maroon;
       color: v.$white;
@@ -44,11 +50,8 @@
 }
 
 @media screen and (min-width: v.$desktop) {
-  .wrapper {
+  .section {
     padding: 3%;
-    section {
-      margin-bottom: 1.5rem;
-    }
     .cardWrapper {
       gap: 2rem;
       margin-top: 1.5rem;
