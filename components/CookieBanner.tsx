@@ -1,6 +1,11 @@
 import styles from "../styles/CookieBanner.module.scss";
 
-const CookieBanner = () => {
+type BannerTypes = {
+  accept: () => void;
+  reject: () => void;
+};
+
+const CookieBanner = ({ accept, reject }: BannerTypes) => {
   return (
     <div className={styles.banner}>
       <p>
@@ -8,10 +13,20 @@ const CookieBanner = () => {
         They help us analyze how the site is used and better personalize the
         website to you.
       </p>
-      <button type="button" id="accept" className={styles.accept}>
+      <button
+        type="button"
+        id="accept"
+        className={styles.accept}
+        onClick={accept}
+      >
         Accept all
       </button>
-      <button type="button" id="reject" className={styles.reject}>
+      <button
+        type="button"
+        id="reject"
+        className={styles.reject}
+        onClick={reject}
+      >
         Rejet all
       </button>
     </div>
