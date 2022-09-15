@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import Layout from "../components/Layout";
@@ -7,6 +7,19 @@ import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [result, setResult] = useState<boolean | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (window.localStorage.getItem("result")) {
+      setResult(window.localStorage.getItem("result") === "true");
+    }
+    if (result != null) {
+      window.localStorage.setItem("result", result.toString());
+    }
+
+    setLoading(false);
+  }, [result]);
+
   return (
     <>
       {result == true && (
@@ -26,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </>
       )}
       <Layout>
-        {result == null && (
+        {result == null && loading == false && (
           <CookieBanner
             accept={() => {
               setResult(true);
