@@ -45,9 +45,9 @@ const Articles: NextPage<PageProps> = ({ articles }) => {
           content="Read up on all the travel-related articles you can here."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="" />
-        <meta property="og:image:secure_url" content="" />
+        <meta property="og:url" content="https://thetravelenablers.com/articles" />
+        <meta property="og:image" content="https://thetravelenablers.com/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://thetravelenablers.com/og-image.jpg" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
