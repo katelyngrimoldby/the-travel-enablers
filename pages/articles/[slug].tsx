@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { createClient } from "contentful";
 import Head from "next/head";
-import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
 import { TypeArticle, TypeArticleFields } from "../../types";
