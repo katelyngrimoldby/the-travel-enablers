@@ -60,7 +60,7 @@ const Article: NextPage<PageProps> = ({ article }) => {
         <title>{`${title} | The Travel Enablers`}</title>
         <meta property="og:title" content={`${title} | The Travel Enablers`} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
+        <meta property="og:url" content={`https://thetravelenablers.com/articles/${slug}`} />
         <meta
           property="og:image"
           content={`https:${coverImage.fields.file.url}`}
