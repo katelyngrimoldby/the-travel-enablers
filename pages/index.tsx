@@ -84,9 +84,9 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           content="Welcome aboard! We love to travel and we are here to help you travel, too! We specialize in hosting small group trips all around the world, and also help you plan the trip of your dreams. We do all the work, so you can have all the fun!"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://thetravelenablers.com" />
-        <meta property="og:image" content="https://thetravelenablers.com/og-image.jpg" />
-        <meta property="og:image:secure_url" content="https://thetravelenablers.com/og-image.jpg" />
+        <meta property="og:url" content="https://www.thetravelenablers.com" />
+        <meta property="og:image" content="https://www.thetravelenablers.com/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://www.thetravelenablers.com/og-image.jpg" />
       </Head>
 
       <main>
