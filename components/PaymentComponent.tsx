@@ -195,6 +195,7 @@ const PaymentComponent = ({
                 />
               </div>
             </div>
+            <p className={styles.disclaimer}>Your name and email will only be retained if and when you make a successful purchase. </p>
             <button type="submit">Next</button>
           </form>
         </div>
