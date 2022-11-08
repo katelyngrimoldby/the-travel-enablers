@@ -82,7 +82,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
         <meta property="og:title" content={`${title} | The Travel Enablers`} />
         <meta property="og:description" content={plainDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://thetravelenablers.com/trips/${slug}`} />
+        <meta property="og:url" content={`https://www.thetravelenablers.com/trips/${slug}`} />
         <meta
           property="og:image"
           content={`https:${images[0].fields.file.url}`}
