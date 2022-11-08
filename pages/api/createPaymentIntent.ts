@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-const stripe = require("stripe")(`${process.env.STRIPE_TEST_SK}`);
+const stripe = require("stripe")(`${process.env.STRIPE_SK}`);
 
 const createPlanIntents = async (
   arr: number[],
