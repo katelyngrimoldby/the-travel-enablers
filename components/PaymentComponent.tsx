@@ -4,7 +4,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "../components/CheckoutForm";
 import styles from "../styles/PaymentComponent.module.scss";
 
-const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_TEST_PK}`);
+const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PK}`);
 
 type ClientSecrets = {
   depositSecret: string;
