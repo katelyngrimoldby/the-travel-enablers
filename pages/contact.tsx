@@ -16,9 +16,9 @@ const Contact: NextPage = () => {
 
         <meta property="og:title" content="Contact Us | The Travel Enablers" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://thetravelenablers.com/contact" />
-        <meta property="og:image" content="https://thetravelenablers.com/og-image.jpg" />
-        <meta property="og:image:secure_url" content="https://thetravelenablers.com/og-image.jpg" />
+        <meta property="og:url" content="https://www.thetravelenablers.com/contact" />
+        <meta property="og:image" content="https://www.thetravelenablers.com/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://www.thetravelenablers.com/og-image.jpg" />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
