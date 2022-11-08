@@ -1,14 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 const stripe = require("stripe")(`${process.env.STRIPE_SK}`);
 
-const createPlanIntents = async (
-  arr: number[],
-  product: string,
-  customer: { id: string }
-) => {
-  return;
-};
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
