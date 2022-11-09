@@ -20,6 +20,13 @@
     color: v.$black;
     text-align: left;
     line-height: 1.7;
+
+    h2 {
+      line-height: 1.2;
+      display: inline-block;
+      width: fit-content;
+      margin: 0 auto;
+    }
   }
   .left,
   .right {
@@ -33,6 +40,10 @@
 @media all and (min-width: v.$desktop) {
   .textWrapper {
     max-width: 50%;
+
+    h2 {
+      margin: 0;
+    }
   }
   .left,
   .right {
