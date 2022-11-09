@@ -105,12 +105,13 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           <WhiteBack>
             <h2>What We Do</h2>
             <section id="groupTrips" className={styles.content}>
-              <h3>Small Group Trips</h3>
+              
               <div className={styles.left}>
                 <div className={styles.sectionImg}>
                   <Image src={gtImg} alt="Group sitting under table on beach" />
                 </div>
                 <div className={styles.textWrapper}>
+                <h3>Small Group Trips</h3>
                   <p>
                     Let’s be honest, some places are just better in a group
                     dynamic! We create boutique travel experiences so that if
@@ -138,7 +139,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
               </div>
             </section>
             <section id="customTrip" className={styles.content}>
-              <h3>Custom Trip Planning</h3>
+              
               <div className={styles.right}>
                 <div className={styles.sectionImg}>
                   <Image
@@ -147,6 +148,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   />
                 </div>
                 <div className={styles.textWrapper}>
+                <h3>Custom Trip Planning</h3>
                   <p>
                     Maybe you don’t have the time or desire to plan out your
                     next vacation. We can handle as much or as little as you
