@@ -3,6 +3,7 @@
 @media screen and (min-width: 0px) {
   .section {
     text-align: center;
+
     h2 {
       color: v.$teal;
     }
@@ -19,6 +20,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
 
     .pWrapper {
       display: flex;
@@ -39,6 +42,7 @@
 
     .pWrapper {
       text-align: left;
+      width: 100%;
     }
   }
 }
