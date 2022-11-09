@@ -36,12 +36,14 @@ const About: NextPage = () => {
         </Hero>
         <WhiteBack>
           <section id="Mandy" className={styles.section}>
-            <h2>About Mandy</h2>
+            
             <div className={styles.left}>
               <div className={styles.imgWrapper}>
                 <Image src={mandy} alt="Mandy on a boat" />
               </div>
+              
               <div className={styles.textWrapper}>
+              <h2>About Mandy</h2>
                 <p>
                   Mandy is a mother of two and wife, she balances running her
                   business as a yoga teacher, yoga retreat host, and yoga
@@ -66,12 +68,13 @@ const About: NextPage = () => {
             </div>
           </section>
           <section id="Ian" className={styles.section}>
-            <h2>About Ian</h2>
+            
             <div className={styles.right}>
               <div className={styles.imgWrapper}>
                 <Image src={ian} alt="Ian in a restaurant" />
               </div>
               <div className={styles.textWrapper}>
+              <h2>About Ian</h2>
                 <p>
                   My husband Ian is probably the most organized person I know.
                   He really can keep it all together via spreadsheets and
