@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -31,7 +30,7 @@ const Contact: NextPage = () => {
             we&apos;ll get back to you as soon as possible. To plan a trip,
             please
             <Link href="/custom-trip">
-              <a>&#x20;take the quiz</a>
+            &#x20;take the quiz
             </Link>
             .
           </p>
