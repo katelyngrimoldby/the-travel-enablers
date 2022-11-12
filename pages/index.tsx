@@ -89,7 +89,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
       </Head>
 
       <main>
-        <Hero imgSrc={heroImg}>
+        <Hero imgSrc={heroImg} home={true}>
           <h1>THE TRAVEL ENABLERS</h1>
           <span>How can we enable you?</span>
           <Divider />

@@ -1,7 +1,7 @@
 @use "variables" as v;
 
 @media all and (min-width: 0) {
-  .hero {
+  .hero, .homeHero {
     height: 63.3vw;
     color: v.$white;
     display: flex;
@@ -60,6 +60,16 @@
 }
 
 @media all and (min-width: v.$tablet) {
+  .homeHero {
+    span {
+      font-size: 1.5rem;
+    }
+
+    svg {
+      width: 200px;
+    }
+  }
+
   .hero {
     height: 43.3vw;
     span {
@@ -72,6 +82,22 @@
 }
 
 @media all and (min-width: v.$desktop) {
+
+  .homeHero {
+    height: 100vh;
+    span {
+      font-size: 2rem;
+    }
+
+    svg {
+      width: 250px;
+    }
+
+    a {
+      margin-top: 20px;
+    }
+  }
+
   .hero {
     height: 40.7vw;
     align-items: center;

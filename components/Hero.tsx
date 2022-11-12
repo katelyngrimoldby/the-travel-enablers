@@ -6,11 +6,12 @@ type HeroProps = {
   imgSrc: StaticImageData | string;
   width?: number;
   height?: number;
+  home?: boolean;
 };
 
-const Hero = ({ children, imgSrc, width, height }: HeroProps) => {
+const Hero = ({ children, imgSrc, width, height, home }: HeroProps) => {
   return (
-    <header className={styles.hero}>
+    <header className={home ? styles.homeHero : styles.hero}>
       <div className={styles.heroContent}>{children}</div>
       {typeof imgSrc === "string" ? (
         <Image
