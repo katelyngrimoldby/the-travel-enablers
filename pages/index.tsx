@@ -105,7 +105,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
             <h2>What We Do</h2>
             <section id="groupTrips" className={styles.content}>
               <div className={styles.left}>
-                <Image src={gtImg} alt="Group sitting under table on beach" className={styles.sectionImg} />
+                <Image src={gtImg} alt="Group sitting under table on beach" className={styles.sectionImg} placeholder="blur" />
                 <div className={styles.textWrapper}>
                 <h3>Small Group Trips</h3>
                   <p>
@@ -141,6 +141,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
                   src={ctImg}
                   alt="View of breach from behind palm trees"
                   className={styles.sectionImg}
+                  placeholder="blur"
                 />
                 <div className={styles.textWrapper}>
                 <h3>Custom Trip Planning</h3>
@@ -194,7 +195,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           <WhiteBack>
             <h2>About Us</h2>
             <div className={styles.left}>
-              <Image src={abtImg} alt="Mandy and Ian on a boat" className={styles.sectionImg} />
+              <Image src={abtImg} alt="Mandy and Ian on a boat" className={styles.sectionImg} placeholder="blur" />
               <div className={styles.textWrapper}>
                 <p>
                   We are your Travel Enablers. Mandy & Ian! We both grew up in
