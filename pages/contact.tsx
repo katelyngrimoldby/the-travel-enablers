@@ -28,9 +28,9 @@ const Contact: NextPage = () => {
           <p className={styles.p}>
             Questions? Suggestions? Collaborations? Fill out the form below and
             we&apos;ll get back to you as soon as possible. To plan a trip,
-            please
+            please{" "}
             <Link href="/custom-trip">
-            &#x20;take the quiz
+            take the quiz
             </Link>
             .
           </p>
