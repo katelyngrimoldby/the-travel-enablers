@@ -36,12 +36,8 @@ const About: NextPage = () => {
         </Hero>
         <WhiteBack>
           <section id="Mandy" className={styles.section}>
-            
             <div className={styles.left}>
-              <div className={styles.imgWrapper}>
-                <Image src={mandy} alt="Mandy on a boat" />
-              </div>
-              
+              <Image src={mandy} alt="Mandy on a boat" className={styles.img} />
               <div className={styles.textWrapper}>
               <h2>About Mandy</h2>
                 <p>
@@ -68,11 +64,8 @@ const About: NextPage = () => {
             </div>
           </section>
           <section id="Ian" className={styles.section}>
-            
             <div className={styles.right}>
-              <div className={styles.imgWrapper}>
-                <Image src={ian} alt="Ian in a restaurant" />
-              </div>
+              <Image src={ian} alt="Ian in a restaurant" className={styles.img} />
               <div className={styles.textWrapper}>
               <h2>About Ian</h2>
                 <p>
