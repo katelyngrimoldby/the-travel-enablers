@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Head from "next/head";
-import Button from "../components/Button";
 import Hero from "../components/Hero";
 import WhiteBack from "../components/WhiteBack";
 import heroImg from "../public/custom-trip-hero-img.jpg";
