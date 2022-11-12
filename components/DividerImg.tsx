@@ -19,7 +19,6 @@ const DividerImg = ({
   return (
     <div className={styles.dividerImg}>
       <div className={styles.content}>{children}</div>
-      <div className={styles.imgWrapper}>
         <Image
           src={imgSrc}
           alt={alt}
@@ -27,7 +26,6 @@ const DividerImg = ({
           width={width}
           className={styles.img}
         />
-      </div>
     </div>
   );
 };
