@@ -19,7 +19,7 @@ const ArticleCard = ({ article, buttonType }: CardProps) => {
             className={styles.img}
             src={`https:${coverImage.fields.file.url}`}
             alt={coverImage.fields.description}
-            layout="fill"
+            fill={true}
           />
         )}
       </div>
