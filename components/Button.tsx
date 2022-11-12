@@ -10,10 +10,8 @@ type ButtonProps = {
 
 const Button = ({ buttonType, location, value, onClick }: ButtonProps) => {
   return (
-    <Link href={location}>
-      <a className={styles[buttonType]} onClick={onClick}>
-        {value}
-      </a>
+    <Link href={location} className={styles[buttonType]} onClick={onClick}>   
+      {value}
     </Link>
   );
 };
