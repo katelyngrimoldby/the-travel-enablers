@@ -54,7 +54,7 @@ const CustomTrip: NextPage = () => {
                 to you. Discover your travel style and choose your level of
                 service; we take care of the rest.
               </p>
-                <Image src={img1} alt="Picnic in a city" className={styles.img} />
+                <Image src={img1} alt="Picnic in a city" className={styles.img} placeholder="blur" />
             </article>
           </section>
           <section id="packages" className={styles.section}>
@@ -77,7 +77,7 @@ const CustomTrip: NextPage = () => {
                   of local recommendations. All you have to do is book it with
                   your credit card.
                 </p>
-                  <Image src={img2} alt="Group around statues" className={styles.cardImg} />
+                  <Image src={img2} alt="Group around statues" className={styles.cardImg} placeholder="blur" />
               </article>
 
               <article className={styles.card}>
@@ -92,7 +92,7 @@ const CustomTrip: NextPage = () => {
                   you updated on international travel restrictions &
                   suggestions.
                 </p>
-                  <Image src={img3} alt="Paddleboarders by small island" className={styles.cardImg} />
+                  <Image src={img3} alt="Paddleboarders by small island" className={styles.cardImg} placeholder="blur" />
               </article>
 
               <article className={styles.card}>
@@ -107,7 +107,7 @@ const CustomTrip: NextPage = () => {
                   before travel full of helpful information. It is a truly
                   bespoke experience.
                 </p>
-                  <Image src={img4} alt="Group by Arizona cliff" className={styles.cardImg} />
+                  <Image src={img4} alt="Group by Arizona cliff" className={styles.cardImg} placeholder="blur" />
               </article>
             </div>
           </section>
