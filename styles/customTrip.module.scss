@@ -20,7 +20,9 @@
       line-height: 1.7;
     }
 
-    .imgWrapper {
+    .img {
+      width: 100%;
+      height: auto;
       max-width: 650px;
     }
     .cardWrapper {
@@ -32,10 +34,11 @@
       line-height: 1.7;
       margin-top: 1rem;
     }
-    .cardImgWrapper {
+    .cardImg {
       margin: 0 auto;
       margin-top: 1rem;
       width: 80%;
+      height: auto;
       max-width: 500px;
     }
     .card {

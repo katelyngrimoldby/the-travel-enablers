@@ -12,29 +12,24 @@ const Hero = ({ children, imgSrc, width, height }: HeroProps) => {
   return (
     <header className={styles.hero}>
       <div className={styles.heroContent}>{children}</div>
-      <div className={styles.imgWrapper}>
-        {typeof imgSrc === "string" ? (
-          <Image
-            src={imgSrc}
-            alt=""
-            className={styles.heroImg}
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-            height={height}
-            width={width}
-          />
-        ) : (
-          <Image
-            src={imgSrc}
-            alt=""
-            className={styles.heroImg}
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
-        )}
-      </div>
+      {typeof imgSrc === "string" ? (
+        <Image
+          src={imgSrc}
+          alt=""
+          className={styles.img}
+          priority={true}
+          height={height}
+          width={width}
+        />
+      ) : (
+        <Image
+          src={imgSrc}
+          alt=""
+          className={styles.img}
+          priority={true}
+          placeholder="blur"
+        />
+      )}
     </header>
   );
 };

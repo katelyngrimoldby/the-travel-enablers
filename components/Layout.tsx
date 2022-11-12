@@ -20,21 +20,10 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <header className={styles.header}>
-        {visible ? (
-          <Link href="/">
-            <a onClick={clickHandler}>
+      <header className={styles.header}>    
+          <Link href="/" aria-label="Go to Home" onClick={visible ? clickHandler : undefined}>
               <ColorfulCompass />
-            </a>
           </Link>
-        ) : (
-          <Link href="/">
-            <a aria-label="Go to Home">
-              <ColorfulCompass />
-            </a>
-          </Link>
-        )}
-
         <button
           className={styles.menuButton}
           type="button"
@@ -54,23 +43,23 @@ const Layout = ({ children }: LayoutProps) => {
           </button>
           <ul>
             <li>
-              <Link href="/trips">
-                <a onClick={clickHandler}>Upcoming Trips</a>
+              <Link href="/trips" onClick={clickHandler}>
+                Upcoming Trips
               </Link>
             </li>
             <li>
-              <Link href="/articles">
-                <a onClick={clickHandler}>Articles</a>
+              <Link href="/articles" onClick={clickHandler}>
+                Articles
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a onClick={clickHandler}>About</a>
+              <Link href="/about" onClick={clickHandler}>
+                About
               </Link>
             </li>
             <li>
-              <Link href="/contact">
-                <a onClick={clickHandler}>Contact</a>
+              <Link href="/contact" onClick={clickHandler}>
+                Contact
               </Link>
             </li>
             <li>
@@ -94,22 +83,22 @@ const Layout = ({ children }: LayoutProps) => {
               <ul>
                 <li>
                   <Link href="/trips">
-                    <a>Upcoming Trips</a>
+                    Upcoming Trips
                   </Link>
                 </li>
                 <li>
                   <Link href="/custom-trip">
-                    <a>Custom Trip Planning</a>
+                    Custom Trip Planning
                   </Link>
                 </li>
                 <li>
                   <Link href="/articles">
-                    <a>Articles</a>
+                    Articles
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <a>About</a>
+                    About
                   </Link>
                 </li>
               </ul>
@@ -119,7 +108,7 @@ const Layout = ({ children }: LayoutProps) => {
               <ul>
                 <li>
                   <Link href="/contact">
-                    <a>Contact</a>
+                    Contact
                   </Link>
                 </li>
                 <li>

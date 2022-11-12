@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { createClient } from "contentful";
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import {
   TypeArticle,
@@ -105,11 +104,8 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           <WhiteBack>
             <h2>What We Do</h2>
             <section id="groupTrips" className={styles.content}>
-              
               <div className={styles.left}>
-                <div className={styles.sectionImg}>
-                  <Image src={gtImg} alt="Group sitting under table on beach" />
-                </div>
+                <Image src={gtImg} alt="Group sitting under table on beach" className={styles.sectionImg} placeholder="blur" />
                 <div className={styles.textWrapper}>
                 <h3>Small Group Trips</h3>
                   <p>
@@ -141,12 +137,12 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
             <section id="customTrip" className={styles.content}>
               
               <div className={styles.right}>
-                <div className={styles.sectionImg}>
-                  <Image
-                    src={ctImg}
-                    alt="View of breach from behind palm trees"
-                  />
-                </div>
+                <Image
+                  src={ctImg}
+                  alt="View of breach from behind palm trees"
+                  className={styles.sectionImg}
+                  placeholder="blur"
+                />
                 <div className={styles.textWrapper}>
                 <h3>Custom Trip Planning</h3>
                   <p>
@@ -199,9 +195,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
           <WhiteBack>
             <h2>About Us</h2>
             <div className={styles.left}>
-              <div className={styles.sectionImg}>
-                <Image src={abtImg} alt="Mandy and Ian on a boat" />
-              </div>
+              <Image src={abtImg} alt="Mandy and Ian on a boat" className={styles.sectionImg} placeholder="blur" />
               <div className={styles.textWrapper}>
                 <p>
                   We are your Travel Enablers. Mandy & Ian! We both grew up in
