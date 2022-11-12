@@ -54,9 +54,7 @@ const CustomTrip: NextPage = () => {
                 to you. Discover your travel style and choose your level of
                 service; we take care of the rest.
               </p>
-              <div className={styles.imgWrapper}>
-                <Image src={img1} alt="Picnic in a city" />
-              </div>
+                <Image src={img1} alt="Picnic in a city" className={styles.img} />
             </article>
           </section>
           <section id="packages" className={styles.section}>
@@ -79,9 +77,7 @@ const CustomTrip: NextPage = () => {
                   of local recommendations. All you have to do is book it with
                   your credit card.
                 </p>
-                <div className={styles.cardImgWrapper}>
-                  <Image src={img2} alt="Group around statues" />
-                </div>
+                  <Image src={img2} alt="Group around statues" className={styles.cardImg} />
               </article>
 
               <article className={styles.card}>
@@ -96,9 +92,7 @@ const CustomTrip: NextPage = () => {
                   you updated on international travel restrictions &
                   suggestions.
                 </p>
-                <div className={styles.cardImgWrapper}>
-                  <Image src={img3} alt="Paddleboarders by small island" />
-                </div>
+                  <Image src={img3} alt="Paddleboarders by small island" className={styles.cardImg} />
               </article>
 
               <article className={styles.card}>
@@ -113,9 +107,7 @@ const CustomTrip: NextPage = () => {
                   before travel full of helpful information. It is a truly
                   bespoke experience.
                 </p>
-                <div className={styles.cardImgWrapper}>
-                  <Image src={img4} alt="Group by Arizona cliff" />
-                </div>
+                  <Image src={img4} alt="Group by Arizona cliff" className={styles.cardImg} />
               </article>
             </div>
           </section>
