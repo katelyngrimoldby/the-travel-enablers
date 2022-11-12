@@ -111,28 +111,26 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
               <div className={styles.pWrapper}>
                 {documentToReactComponents(initialDescription as Document)}
               </div>
-              <div className={styles.sectionImg}>
-                <Image
-                  src={`https:${images[1].fields.file.url}`}
-                  alt={images[1].fields.description}
-                  height={images[1].fields.file.details.image?.height}
-                  width={images[1].fields.file.details.image?.width}
-                />
-              </div>
+              <Image
+                src={`https:${images[1].fields.file.url}`}
+                alt={images[1].fields.description}
+                height={images[1].fields.file.details.image?.height}
+                width={images[1].fields.file.details.image?.width}
+                className={styles.sectionImg}
+              />
             </div>
             <h3>Itinerary</h3>
             <div className={styles.pWrapper}>
               {documentToReactComponents(itinerary as Document)}
             </div>
             <div className={styles.content}>
-              <div className={styles.sectionImg}>
-                <Image
-                  src={`https:${images[2].fields.file.url}`}
-                  alt={images[2].fields.description}
-                  height={images[2].fields.file.details.image?.height}
-                  width={images[2].fields.file.details.image?.width}
-                />
-              </div>
+              <Image
+                src={`https:${images[2].fields.file.url}`}
+                alt={images[2].fields.description}
+                height={images[2].fields.file.details.image?.height}
+                width={images[2].fields.file.details.image?.width}
+                className={styles.sectionImg}
+              />
               <div className={styles.pWrapper}>
                 {documentToReactComponents(closingDescription as Document)}
               </div>
