@@ -20,7 +20,6 @@ const Hero = ({ children, imgSrc, width, height }: HeroProps) => {
           priority={true}
           height={height}
           width={width}
-          placeholder="blur"
         />
       ) : (
         <Image
