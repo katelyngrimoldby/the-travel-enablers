@@ -25,6 +25,7 @@ export interface TypeGroupTripFields {
   deposit: Contentful.EntryFields.Integer;
   images: Contentful.Asset[];
   thumbImg: Contentful.Asset;
+  gallery: Contentful.Asset[];
 }
 
 export type TypeGroupTrip = Contentful.Entry<TypeGroupTripFields>;
