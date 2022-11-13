@@ -24,15 +24,43 @@
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
+  }
 
-    .pWrapper {
+  .pWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: v.$black;
+    text-align: center;
+    line-height: 1.7;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minMax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    .col {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      color: v.$black;
-      text-align: center;
-      line-height: 1.7;
+      gap: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
+  }
+}
+
+@media screen and (min-width: v.$tablet) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -46,5 +74,9 @@
       text-align: left;
       width: 100%;
     }
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
