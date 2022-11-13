@@ -30,7 +30,23 @@ export async function getStaticProps() {
   };
 }
 
+
 const Trips: NextPage<PageProps> = ({ trips }) => {
+
+  const sortedTrips = trips.sort((a, b) => {
+    const splitA: string[] = a.fields.startDate.split("-");
+    const splitB: string[] = b.fields.startDate.split("-");
+
+    const numA = splitA.map((e) => {
+      return parseInt(e);
+    });
+    const numB = splitB.map((e) => {
+      return parseInt(e);
+    });
+
+    return numA[0] - numB[0] || numA[1] - numB[1] || numA[2] - numB[2];
+  });
+
   return (
     <>
       <Head>
@@ -59,10 +75,10 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
         </Hero>
         <WhiteBack>
           <div className={styles.content}>
-            {trips.length < 1 ? (
+            {sortedTrips.length < 1 ? (
               <p>There are no upcoming trips right now.</p>
             ) : (
-              trips.map((e, i) => {
+              sortedTrips.map((e, i) => {
                 return <TripCard key={i} trip={e} buttonType="light" />;
               })
             )}
