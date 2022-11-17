@@ -27,7 +27,7 @@ const CookieBanner = ({ accept, reject }: BannerTypes) => {
         className={styles.reject}
         onClick={reject}
       >
-        Rejet all
+        Reject all
       </button>
     </div>
   );
