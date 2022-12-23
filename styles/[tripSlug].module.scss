@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 @media screen and (min-width: 0px) {
   .section {
@@ -53,6 +53,27 @@
       img {
         width: 100%;
         height: auto;
+      }
+    }
+  }
+
+  .pckgWrapper {
+    margin-top: 1.5rem;
+  }
+
+  .pckgList {
+    list-style: none;
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: v.$black;
+      text-align: center;
+      line-height: 1.7;
+      font-family: v.$body;
+      font-size: 1rem;
+      @media all and (min-width: v.$desktop) {
+        font-size: 1.125rem;
       }
     }
   }
