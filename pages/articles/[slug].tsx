@@ -1,13 +1,14 @@
-import type { NextPage } from "next";
-import { createClient } from "contentful";
-import Head from "next/head";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Document } from "@contentful/rich-text-types";
-import { TypeArticle, TypeArticleFields } from "../../types";
-import Hero from "../../components/Hero";
-import WhiteBack from "../../components/WhiteBack";
-import Divider from "../../icons/Divider";
-import styles from "../../styles/[articleSlug].module.scss";
+import type { NextPage } from 'next';
+import { createClient } from 'contentful';
+import Head from 'next/head';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Document } from '@contentful/rich-text-types';
+import { TypeArticle, TypeArticleFields } from '../../types';
+import Hero from '../../components/Hero';
+import WhiteBack from '../../components/WhiteBack';
+import Gallery from '../../components/Gallery';
+import Divider from '../../icons/Divider';
+import styles from '../../styles/[articleSlug].module.scss';
 
 const client = createClient({
   space: `${process.env.NEXT_PUBLIC_SPACE_ID}`,
@@ -16,7 +17,7 @@ const client = createClient({
 
 export const getStaticPaths = async () => {
   const res = await client.getEntries<TypeArticleFields>({
-    content_type: "article",
+    content_type: 'article',
   });
 
   const paths = res.items.map((e) => {
@@ -37,8 +38,8 @@ type StaticProps = {
 
 export const getStaticProps = async ({ params }: StaticProps) => {
   const res = await client.getEntries<TypeArticleFields>({
-    content_type: "article",
-    "fields.slug": params.slug,
+    content_type: 'article',
+    'fields.slug': params.slug,
   });
 
   return {
@@ -51,21 +52,30 @@ type PageProps = {
 };
 
 const Article: NextPage<PageProps> = ({ article }) => {
-  const { title, coverImage, content, slug } = article.fields;
+  const { title, coverImage, content, slug, gallery } = article.fields;
 
   return (
     <>
       <Head>
         <title>{`${title} | The Travel Enablers`}</title>
-        <meta property="og:title" content={`${title} | The Travel Enablers`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.thetravelenablers.com/articles/${slug}`} />
         <meta
-          property="og:image"
+          property='og:title'
+          content={`${title} | The Travel Enablers`}
+        />
+        <meta
+          property='og:type'
+          content='website'
+        />
+        <meta
+          property='og:url'
+          content={`https://www.thetravelenablers.com/articles/${slug}`}
+        />
+        <meta
+          property='og:image'
           content={`https:${coverImage.fields.file.url}`}
         />
         <meta
-          property="og:image:secure_url"
+          property='og:image:secure_url'
           content={`https:${coverImage.fields.file.url}`}
         />
       </Head>
@@ -82,6 +92,7 @@ const Article: NextPage<PageProps> = ({ article }) => {
           <article className={styles.article}>
             {documentToReactComponents(content as Document)}
           </article>
+          {gallery ? <Gallery gallery={gallery} /> : null}
         </WhiteBack>
       </main>
     </>
