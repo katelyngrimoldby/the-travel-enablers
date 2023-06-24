@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 @media screen and (min-width: 0px) {
   .article {
@@ -9,5 +9,9 @@
     gap: 2rem;
     line-height: 1.7;
     color: v.$black;
+
+    p {
+      width: 100%;
+    }
   }
 }
