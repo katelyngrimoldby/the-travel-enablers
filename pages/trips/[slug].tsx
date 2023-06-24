@@ -175,7 +175,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
                   {packageNames.map((e, i) => {
                     return (
                       <li key={i}>
-                        {e}: {amounts[i]}
+                        {e}: ${amounts[i]} USD
                       </li>
                     );
                   })}
