@@ -1,11 +1,12 @@
-import * as CFRichTextTypes from "@contentful/rich-text-types";
-import * as Contentful from "contentful";
+import * as CFRichTextTypes from '@contentful/rich-text-types';
+import * as Contentful from 'contentful';
 
 export interface TypeArticleFields {
   title: Contentful.EntryFields.Symbol;
   slug: Contentful.EntryFields.Symbol;
   coverImage: Contentful.Asset;
   content: CFRichTextTypes.Block | CFRichTextTypes.Inline;
+  gallery?: Contentful.Asset[];
 }
 
 export type TypeArticle = Contentful.Entry<TypeArticleFields>;
