@@ -1,0 +1,42 @@
+@use 'variables' as v;
+
+@media screen and (min-width: 0) {
+  .section {
+    text-align: center;
+
+    h2 {
+      color: v.$teal;
+    }
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: minMax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: v.$tablet) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: v.$desktop) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

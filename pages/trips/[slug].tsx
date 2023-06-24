@@ -7,6 +7,7 @@ import Hero from '../../components/Hero';
 import PaymentComponent from '../../components/PaymentComponent';
 import DividerImg from '../../components/DividerImg';
 import WhiteBack from '../../components/WhiteBack';
+import Gallery from '../../components/Gallery';
 import Divider from '../../icons/Divider';
 import styles from '../../styles/[tripSlug].module.scss';
 import { Document } from '@contentful/rich-text-types';
@@ -119,7 +120,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           <span>{dates}</span>
           <Divider />
         </Hero>
-
+        <Gallery gallery={gallery} />
         <section
           id='details'
           className={styles.section}
@@ -187,53 +188,6 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
                 product={title}
                 packages={packageNames}
               />
-            </section>
-            <section id='gallery'>
-              <h2>Gallery</h2>
-              <div className={styles.grid}>
-                <div className={styles.col}>
-                  <Image
-                    src={`https:${gallery[0].fields.file.url}`}
-                    alt={gallery[0].fields.description}
-                    height={gallery[0].fields.file.details.image?.height}
-                    width={gallery[0].fields.file.details.image?.width}
-                  />
-                  <Image
-                    src={`https:${gallery[1].fields.file.url}`}
-                    alt={gallery[1].fields.description}
-                    height={gallery[1].fields.file.details.image?.height}
-                    width={gallery[1].fields.file.details.image?.width}
-                  />
-                </div>
-                <div className={styles.col}>
-                  <Image
-                    src={`https:${gallery[2].fields.file.url}`}
-                    alt={gallery[2].fields.description}
-                    height={gallery[2].fields.file.details.image?.height}
-                    width={gallery[2].fields.file.details.image?.width}
-                  />
-                  <Image
-                    src={`https:${gallery[3].fields.file.url}`}
-                    alt={gallery[3].fields.description}
-                    height={gallery[3].fields.file.details.image?.height}
-                    width={gallery[3].fields.file.details.image?.width}
-                  />
-                </div>
-                <div className={styles.col}>
-                  <Image
-                    src={`https:${gallery[4].fields.file.url}`}
-                    alt={gallery[4].fields.description}
-                    height={gallery[4].fields.file.details.image?.height}
-                    width={gallery[4].fields.file.details.image?.width}
-                  />
-                  <Image
-                    src={`https:${gallery[5].fields.file.url}`}
-                    alt={gallery[5].fields.description}
-                    height={gallery[5].fields.file.details.image?.height}
-                    width={gallery[5].fields.file.details.image?.width}
-                  />
-                </div>
-              </div>
             </section>
           </WhiteBack>
         </div>
