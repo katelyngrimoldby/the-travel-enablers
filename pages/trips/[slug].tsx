@@ -120,7 +120,6 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           <span>{dates}</span>
           <Divider />
         </Hero>
-        <Gallery gallery={gallery} />
         <section
           id='details'
           className={styles.section}
@@ -189,6 +188,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
                 packages={packageNames}
               />
             </section>
+            <Gallery gallery={gallery} />
           </WhiteBack>
         </div>
       </main>
