@@ -1,4 +1,4 @@
-@use "./variables" as v;
+@use './variables' as v;
 
 @media all and (min-width: 0px) {
   .header,
@@ -6,9 +6,9 @@
     padding: 3%;
     z-index: 1;
     a {
-      color: v.$maroon;
+      color: v.$green;
       &:hover {
-        color: v.$orange;
+        color: v.$black;
       }
     }
     ul {
@@ -57,7 +57,7 @@
   }
 
   .topFooter {
-    background-color: v.$white;
+    background-color: v.$cream;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,14 +65,14 @@
     gap: 25px;
     padding-top: 5%;
     h2 {
-      color: v.$teal;
+      color: v.$black;
     }
     li {
       margin-bottom: 10%;
     }
   }
   .bottomFooter {
-    background-color: v.$maroon;
+    background-color: v.$green;
     color: v.$white;
     padding: 3%;
     text-align: center;
@@ -123,18 +123,19 @@
       }
       a {
         color: v.$white;
+        &:hover {
+          color: v.$cream;
+        }
       }
       ul {
         margin: 0;
         display: flex;
         gap: 30px;
         justify-content: right;
-        align-items: center;
+        align-items: flex-end;
       }
       li {
-        flex-shrink: 0;
-        flex-grow: 1;
-        margin: 0;
+        margin: 2em;
       }
     }
   }

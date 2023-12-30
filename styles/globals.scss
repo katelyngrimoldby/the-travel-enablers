@@ -1,4 +1,40 @@
-@use "variables" as v;
+@use 'variables' as v;
+
+//local fonts
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../public/fonts/cinzel.regular.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../public/fonts/cinzel.bold.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../public/fonts/cinzel.black.woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garet';
+  src: url('../public/fonts/garet.book.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garet';
+  src: url('../public/fonts/garet.heavy.woff');
+  font-weight: 700;
+  font-style: normal;
+}
 
 // reset
 * {
@@ -10,7 +46,7 @@
 // typography
 h1 {
   font-family: v.$header;
-  font-weight: 400;
+  font-weight: 700;
   @media all and (min-width: 0px) {
     font-size: 1.5rem;
   }
@@ -23,11 +59,11 @@ h1 {
 }
 h2 {
   font-family: v.$header;
-  font-weight: 500;
+  font-weight: 700;
   padding-bottom: 2px;
   margin-bottom: 1rem;
   font-variant-caps: small-caps;
-  border-bottom: 4px solid v.$orange;
+  border-bottom: 2px solid v.$green;
   display: inline-block;
   @media all and (min-width: 0px) {
     font-size: 1.5rem;

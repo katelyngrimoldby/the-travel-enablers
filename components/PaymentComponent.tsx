@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "../components/CheckoutForm";
-import styles from "../styles/PaymentComponent.module.scss";
+import { useState, useEffect } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from '../components/CheckoutForm';
+import styles from '../styles/PaymentComponent.module.scss';
 
 const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PK}`);
 
@@ -25,12 +25,12 @@ const PaymentComponent = ({
   packages,
 }: PaymentProps) => {
   const [customer, setCustomer] = useState({
-    cName: "",
-    cEmail: "",
+    cName: '',
+    cEmail: '',
   });
   const [clientSecrets, setClientSecrets] = useState<ClientSecrets>();
   const [plan, setPlan] = useState<number>();
-  const [currentSecret, setCurrentSecret] = useState("");
+  const [currentSecret, setCurrentSecret] = useState('');
 
   useEffect(() => {
     if (!plan) {
@@ -61,9 +61,9 @@ const PaymentComponent = ({
       return e * 100;
     });
 
-    fetch("/api/createPaymentIntent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('/api/createPaymentIntent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         deposit: deposit * 100,
         amounts: stripeAmounts,
@@ -82,20 +82,20 @@ const PaymentComponent = ({
 
   //appearance for paymentElements
   const appearance = {
-    theme: "flat" as const,
+    theme: 'flat' as const,
     variables: {
-      fontFamily: '"Poppins", sans-serif',
-      fontWeightNormal: "400",
-      colorPrimary: "#560107",
-      colorText: "#000e0c",
-      colorBackground: "#fffbf6",
+      fontFamily: '"Garet", sans-serif',
+      fontWeightNormal: '400',
+      colorPrimary: '#4d6c41',
+      colorText: '#131313',
+      colorBackground: '#F2EEE4',
     },
     rules: {
-      ".Label": {
-        color: "#168d79",
-        fontFamily: '"Ibarra Real Nova", serif',
-        fontWeight: "500",
-        fontSize: "1.3rem",
+      '.Label': {
+        color: '#131313',
+        fontFamily: '"Cinzel", serif',
+        fontWeight: '700',
+        fontSize: '1.3rem',
       },
     },
   };
@@ -104,12 +104,20 @@ const PaymentComponent = ({
     <div className={styles.wrapper}>
       {clientSecrets ? (
         <>
-          <div onChange={handleRadioChange} className={styles.radioWrapper}>
+          <div
+            onChange={handleRadioChange}
+            className={styles.radioWrapper}
+          >
             <h3>Select a Package</h3>
             {packages.map((e, i) => {
               return (
                 <div key={i}>
-                  <input type="radio" name="pkg" id={i.toString()} value={i} />
+                  <input
+                    type='radio'
+                    name='pkg'
+                    id={i.toString()}
+                    value={i}
+                  />
                   <label
                     htmlFor={i.toString()}
                   >{`${e} - $${amounts[i]}`}</label>
@@ -126,39 +134,22 @@ const PaymentComponent = ({
                 options={{
                   clientSecret: clientSecrets.depositSecret,
                   appearance: appearance,
-                  fonts: [
-                    {
-                      cssSrc:
-                        "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
-                    },
-                    {
-                      cssSrc:
-                        "https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;700",
-                    },
-                  ],
                 }}
               >
                 <CheckoutForm clientSecret={clientSecrets.depositSecret} />
               </Elements>
             </div>
             {currentSecret && (
-              <div key={currentSecret} className={styles.elementWrapper}>
+              <div
+                key={currentSecret}
+                className={styles.elementWrapper}
+              >
                 <h3>Or Pay in Full Now</h3>
                 <Elements
                   stripe={stripePromise}
                   options={{
                     clientSecret: currentSecret,
                     appearance: appearance,
-                    fonts: [
-                      {
-                        cssSrc:
-                          "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
-                      },
-                      {
-                        cssSrc:
-                          "https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;700",
-                      },
-                    ],
                   }}
                 >
                   <CheckoutForm clientSecret={currentSecret} />
@@ -173,30 +164,33 @@ const PaymentComponent = ({
           <form onSubmit={handleSubmit}>
             <div className={styles.custWrapper}>
               <div className={styles.inputWrapper}>
-                <label htmlFor="cName">Name</label>
+                <label htmlFor='cName'>Name</label>
                 <input
-                  type="text"
-                  id="cName"
-                  placeholder="John Doe"
+                  type='text'
+                  id='cName'
+                  placeholder='John Doe'
                   value={customer.cName}
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className={styles.inputWrapper}>
-                <label htmlFor="cEmail">Email</label>
+                <label htmlFor='cEmail'>Email</label>
                 <input
-                  type="email"
-                  id="cEmail"
-                  placeholder="johndoe@example.com"
+                  type='email'
+                  id='cEmail'
+                  placeholder='johndoe@example.com'
                   value={customer.cEmail}
                   onChange={handleChange}
                   required
                 />
               </div>
             </div>
-            <p className={styles.disclaimer}>Your name and email will only be retained if and when you make a successful purchase. </p>
-            <button type="submit">Next</button>
+            <p className={styles.disclaimer}>
+              Your name and email will only be retained if and when you make a
+              successful purchase.{' '}
+            </p>
+            <button type='submit'>Next</button>
           </form>
         </div>
       )}

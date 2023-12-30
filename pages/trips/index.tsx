@@ -1,13 +1,12 @@
-import type { NextPage } from "next";
-import { createClient } from "contentful";
-import Head from "next/head";
-import { TypeGroupTrip, TypeGroupTripFields } from "../../types";
-import Hero from "../../components/Hero";
-import TripCard from "../../components/TripCard";
-import WhiteBack from "../../components/WhiteBack";
-import Divider from "../../icons/Divider";
-import heroImg from "../../public/cardPage-hero-img.jpg";
-import styles from "../../styles/cardPage.module.scss";
+import type { NextPage } from 'next';
+import { createClient } from 'contentful';
+import Head from 'next/head';
+import { TypeGroupTrip, TypeGroupTripFields } from '../../types';
+import Hero from '../../components/Hero';
+import TripCard from '../../components/TripCard';
+import Divider from '../../icons/Divider';
+import heroImg from '../../public/cardPage-hero-img.jpg';
+import styles from '../../styles/cardPage.module.scss';
 
 type PageProps = {
   trips: TypeGroupTrip[];
@@ -20,7 +19,7 @@ export async function getStaticProps() {
   });
 
   const trips = await client.getEntries<TypeGroupTripFields>({
-    content_type: "groupTrip",
+    content_type: 'groupTrip',
   });
 
   return {
@@ -30,12 +29,10 @@ export async function getStaticProps() {
   };
 }
 
-
 const Trips: NextPage<PageProps> = ({ trips }) => {
-
   const sortedTrips = trips.sort((a, b) => {
-    const splitA: string[] = a.fields.startDate.split("-");
-    const splitB: string[] = b.fields.startDate.split("-");
+    const splitA: string[] = a.fields.startDate.split('-');
+    const splitB: string[] = b.fields.startDate.split('-');
 
     const numA = splitA.map((e) => {
       return parseInt(e);
@@ -52,38 +49,54 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
       <Head>
         <title>Upcoming Trips | The Travel Enablers</title>
         <meta
-          name="description"
-          content="View all of the upcoming group trips here. Pick your favourite and reserve your spot!"
+          name='description'
+          content='View all of the upcoming group trips here. Pick your favourite and reserve your spot!'
         />
         <meta
-          property="og:title"
-          content="Upcoming Trips | The Travel Enablers"
+          property='og:title'
+          content='Upcoming Trips | The Travel Enablers'
         />
         <meta
-          property="og:description"
-          content="View all of the upcoming group trips here. Pick your favourite and reserve your spot!"
+          property='og:description'
+          content='View all of the upcoming group trips here. Pick your favourite and reserve your spot!'
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.thetravelenablers.com/trips" />
-        <meta property="og:image" content="https://www.thetravelenablers.com/og-image.jpg" />
-        <meta property="og:image:secure_url" content="https://www.thetravelenablers.com/og-image.jpg" />
+        <meta
+          property='og:type'
+          content='website'
+        />
+        <meta
+          property='og:url'
+          content='https://www.thetravelenablers.com/trips'
+        />
+        <meta
+          property='og:image'
+          content='https://www.thetravelenablers.com/og-image.jpg'
+        />
+        <meta
+          property='og:image:secure_url'
+          content='https://www.thetravelenablers.com/og-image.jpg'
+        />
       </Head>
       <main>
         <Hero imgSrc={heroImg}>
           <h1>UPCOMING TRIPS</h1>
           <Divider />
         </Hero>
-        <WhiteBack>
-          <div className={styles.content}>
-            {sortedTrips.length < 1 ? (
-              <p>There are no upcoming trips right now.</p>
-            ) : (
-              sortedTrips.map((e, i) => {
-                return <TripCard key={i} trip={e} buttonType="light" />;
-              })
-            )}
-          </div>
-        </WhiteBack>
+        <div className={styles.content}>
+          {sortedTrips.length < 1 ? (
+            <p>There are no upcoming trips right now.</p>
+          ) : (
+            sortedTrips.map((e, i) => {
+              return (
+                <TripCard
+                  key={i}
+                  trip={e}
+                  buttonType='light'
+                />
+              );
+            })
+          )}
+        </div>
       </main>
     </>
   );

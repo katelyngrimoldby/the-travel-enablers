@@ -1,9 +1,9 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 .wrapper {
   button {
     display: block;
-    background-color: v.$orange;
+    background-color: v.$green;
     color: v.$white !important;
     padding: 6px 12px;
     border-radius: 12px;

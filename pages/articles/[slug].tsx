@@ -5,7 +5,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types';
 import { TypeArticle, TypeArticleFields } from '../../types';
 import Hero from '../../components/Hero';
-import WhiteBack from '../../components/WhiteBack';
 import Gallery from '../../components/Gallery';
 import Divider from '../../icons/Divider';
 import styles from '../../styles/[articleSlug].module.scss';
@@ -88,12 +87,10 @@ const Article: NextPage<PageProps> = ({ article }) => {
           <h1>{title.toUpperCase()}</h1>
           <Divider />
         </Hero>
-        <WhiteBack>
-          <article className={styles.article}>
-            {documentToReactComponents(content as Document)}
-          </article>
-          {gallery ? <Gallery gallery={gallery} /> : null}
-        </WhiteBack>
+        <article className={styles.article}>
+          {documentToReactComponents(content as Document)}
+        </article>
+        {gallery ? <Gallery gallery={gallery} /> : null}
       </main>
     </>
   );

@@ -1,11 +1,10 @@
-import { useState } from "react";
-import Link from "next/link";
-import ColorfulCompass from "../icons/ColorfulCompass/ColorfulCompass";
-import MenuOpen from "../icons/MenuOpen";
-import MenuClose from "../icons/MenuClose";
-import ColorfulFullText from "../icons/ColorfulFullText/ColorfulFullText";
-import Button from "../components/Button";
-import styles from "../styles/Layout.module.scss";
+import { useState } from 'react';
+import Link from 'next/link';
+import ColorfulCompass from '../icons/ColorfulCompass/ColorfulCompass';
+import MenuOpen from '../icons/MenuOpen';
+import MenuClose from '../icons/MenuClose';
+import ColorfulFullText from '../icons/ColorfulFullText/ColorfulFullText';
+import styles from '../styles/Layout.module.scss';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -20,55 +19,47 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <header className={styles.header}>    
-          <Link href="/" aria-label="Go to Home" onClick={visible ? clickHandler : undefined}>
-              <ColorfulCompass />
-          </Link>
+      <header className={styles.header}>
+        <Link
+          href='/'
+          aria-label='Go to Home'
+          onClick={visible ? clickHandler : undefined}
+        >
+          <ColorfulCompass />
+        </Link>
         <button
           className={styles.menuButton}
-          type="button"
+          type='button'
           onClick={clickHandler}
-          aria-label="Open nav menu"
+          aria-label='Open nav menu'
         >
           <MenuOpen />
         </button>
         <nav className={visible ? styles.visible : undefined}>
           <button
             className={styles.menuButton}
-            type="button"
+            type='button'
             onClick={clickHandler}
-            aria-label="Close nav menu"
+            aria-label='Close nav menu'
           >
             <MenuClose />
           </button>
           <ul>
             <li>
-              <Link href="/trips" onClick={clickHandler}>
+              <Link
+                href='/trips'
+                onClick={clickHandler}
+              >
                 Upcoming Trips
               </Link>
             </li>
             <li>
-              <Link href="/articles" onClick={clickHandler}>
-                Articles
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" onClick={clickHandler}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" onClick={clickHandler}>
+              <Link
+                href='/contact'
+                onClick={clickHandler}
+              >
                 Contact
               </Link>
-            </li>
-            <li>
-              <Button
-                buttonType={"main"}
-                location="/custom-trip"
-                value="Take the Quiz"
-                onClick={clickHandler}
-              />
             </li>
           </ul>
         </nav>
@@ -82,24 +73,7 @@ const Layout = ({ children }: LayoutProps) => {
               <h2>Explore</h2>
               <ul>
                 <li>
-                  <Link href="/trips">
-                    Upcoming Trips
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/custom-trip">
-                    Custom Trip Planning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/articles">
-                    Articles
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    About
-                  </Link>
+                  <Link href='/trips'>Upcoming Trips</Link>
                 </li>
               </ul>
             </section>
@@ -107,33 +81,31 @@ const Layout = ({ children }: LayoutProps) => {
               <h2>Get In Touch</h2>
               <ul>
                 <li>
-                  <Link href="/contact">
-                    Contact
-                  </Link>
+                  <Link href='/contact'>Contact</Link>
                 </li>
                 <li>
                   <a
-                    href="https://www.instagram.com/the_travel_enablers/"
-                    rel="noreferrer"
-                    target="_blank"
+                    href='https://www.instagram.com/travellingfoodietours/'
+                    rel='noreferrer'
+                    target='_blank'
                   >
                     Instagram
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.facebook.com/The-Travel-Enablers-108344001925084/?fref=tag"
-                    rel="noreferrer"
-                    target="_blank"
+                    href='https://www.facebook.com/thetravelenablers/'
+                    rel='noreferrer'
+                    target='_blank'
                   >
                     Facebook
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:travelenablers@gmail.com"
-                    rel="noreferrer"
-                    target="_blank"
+                    href='mailto:travellingfoodietours@gmail.com'
+                    rel='noreferrer'
+                    target='_blank'
                   >
                     Email
                   </a>
@@ -145,17 +117,21 @@ const Layout = ({ children }: LayoutProps) => {
         <div className={styles.bottomFooter}>
           <span>The Travel Enablers © 2022</span>
           <span>
-            Designed and built by{" "}
+            Designed and built by{' '}
             <a
-              href="https://katelyngrimoldby.com"
-              target="_blank"
-              rel="noreferrer"
+              href='https://katelyngrimoldby.com'
+              target='_blank'
+              rel='noreferrer'
             >
               Katelyn Grimoldby
             </a>
           </span>
           <span>
-            <a href="../privacy-policy.pdf" target="_blank" rel="noreferrer">
+            <a
+              href='../privacy-policy.pdf'
+              target='_blank'
+              rel='noreferrer'
+            >
               Privacy Policy
             </a>
           </span>

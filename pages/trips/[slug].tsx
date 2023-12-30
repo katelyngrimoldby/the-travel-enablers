@@ -6,7 +6,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Hero from '../../components/Hero';
 import PaymentComponent from '../../components/PaymentComponent';
 import DividerImg from '../../components/DividerImg';
-import WhiteBack from '../../components/WhiteBack';
 import Gallery from '../../components/Gallery';
 import Divider from '../../icons/Divider';
 import styles from '../../styles/[tripSlug].module.scss';
@@ -124,37 +123,35 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           id='details'
           className={styles.section}
         >
-          <WhiteBack>
-            <h2>About The Trip</h2>
-            <div className={styles.content}>
-              <div className={styles.pWrapper}>
-                {documentToReactComponents(initialDescription as Document)}
-              </div>
-              <Image
-                src={`https:${images[1].fields.file.url}`}
-                alt={images[1].fields.description}
-                height={images[1].fields.file.details.image?.height}
-                width={images[1].fields.file.details.image?.width}
-                className={styles.sectionImg}
-              />
-            </div>
-            <h3>Itinerary</h3>
+          <h2>About The Trip</h2>
+          <div className={styles.content}>
             <div className={styles.pWrapper}>
-              {documentToReactComponents(itinerary as Document)}
+              {documentToReactComponents(initialDescription as Document)}
             </div>
-            <div className={styles.content}>
-              <Image
-                src={`https:${images[2].fields.file.url}`}
-                alt={images[2].fields.description}
-                height={images[2].fields.file.details.image?.height}
-                width={images[2].fields.file.details.image?.width}
-                className={styles.sectionImg}
-              />
-              <div className={styles.pWrapper}>
-                {documentToReactComponents(closingDescription as Document)}
-              </div>
+            <Image
+              src={`https:${images[1].fields.file.url}`}
+              alt={images[1].fields.description}
+              height={images[1].fields.file.details.image?.height}
+              width={images[1].fields.file.details.image?.width}
+              className={styles.sectionImg}
+            />
+          </div>
+          <h3>Itinerary</h3>
+          <div className={styles.pWrapper}>
+            {documentToReactComponents(itinerary as Document)}
+          </div>
+          <div className={styles.content}>
+            <Image
+              src={`https:${images[2].fields.file.url}`}
+              alt={images[2].fields.description}
+              height={images[2].fields.file.details.image?.height}
+              width={images[2].fields.file.details.image?.width}
+              className={styles.sectionImg}
+            />
+            <div className={styles.pWrapper}>
+              {documentToReactComponents(closingDescription as Document)}
             </div>
-          </WhiteBack>
+          </div>
         </section>
         <DividerImg
           imgSrc={`https:${images[3].fields.file.url}`}
@@ -163,33 +160,31 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
           width={images[3].fields.file.details.image?.width}
         />
         <div className={styles.section}>
-          <WhiteBack>
-            <section id='book'>
-              <h2>Book Your Spot</h2>
-              <div className={styles.pWrapper}>
-                {documentToReactComponents(packageDetails as Document)}
-              </div>
-              <div className={styles.pckgWrapper}>
-                <h3>Available Packages</h3>
-                <ul className={styles.pckgList}>
-                  {packageNames.map((e, i) => {
-                    return (
-                      <li key={i}>
-                        {e}: ${amounts[i]} USD
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <PaymentComponent
-                deposit={deposit}
-                amounts={amounts}
-                product={title}
-                packages={packageNames}
-              />
-            </section>
-            <Gallery gallery={gallery} />
-          </WhiteBack>
+          <section id='book'>
+            <h2>Book Your Spot</h2>
+            <div className={styles.pWrapper}>
+              {documentToReactComponents(packageDetails as Document)}
+            </div>
+            <div className={styles.pckgWrapper}>
+              <h3>Available Packages</h3>
+              <ul className={styles.pckgList}>
+                {packageNames.map((e, i) => {
+                  return (
+                    <li key={i}>
+                      {e}: ${amounts[i]} USD
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <PaymentComponent
+              deposit={deposit}
+              amounts={amounts}
+              product={title}
+              packages={packageNames}
+            />
+          </section>
+          <Gallery gallery={gallery} />
         </div>
       </main>
     </>

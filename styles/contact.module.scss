@@ -1,13 +1,18 @@
-@use "variables" as v;
+@use 'variables' as v;
+
+.section {
+  background-color: v.$white;
+  padding: 5%;
+}
 
 .p {
   color: v.$black;
   margin-bottom: 3rem;
   text-align: center;
   a {
-    color: v.$maroon;
+    color: v.$black;
     &:hover {
-      color: v.$orange;
+      color: v.$green;
     }
   }
 }
@@ -21,7 +26,7 @@
 
   button {
     display: block;
-    background-color: v.$orange;
+    background-color: v.$green;
     color: v.$white !important;
     padding: 6px 12px;
     border-radius: 12px;
@@ -41,7 +46,7 @@
   label {
     font-family: v.$header;
     font-size: 1.3rem;
-    color: v.$teal;
+    color: v.$green;
     font-weight: 500;
     margin-bottom: 0.25rem;
   }
@@ -50,14 +55,13 @@
     font-family: v.$body;
     font-size: 1rem;
     padding: 1rem;
-    background-color: #fffbf6;
+    background-color: v.$cream;
     border: none;
     border-radius: 12px;
     color: v.$black;
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 3px hsla(356, 98%, 17%, 25%),
-        0 0 0 1px hsla(356, 98%, 17%, 50%);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.5);
     }
   }
 }

@@ -1,11 +1,11 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 .wrapper {
   position: relative;
   margin: 0 20%;
   margin-top: 1.5rem;
   h3 {
-    color: v.$maroon;
+    color: v.$green;
     text-align: center;
     margin-bottom: 1.5rem;
   }
@@ -14,7 +14,7 @@
 .form {
   button {
     display: block;
-    background-color: v.$orange;
+    background-color: v.$green;
     color: v.$white !important;
     padding: 6px 12px;
     border-radius: 12px;
@@ -41,25 +41,24 @@
   label {
     font-family: v.$header;
     font-size: 1.3rem;
-    color: v.$teal;
-    font-weight: 500;
+    color: v.$black;
+    font-weight: 700;
     margin-bottom: 0.25rem;
   }
   input {
     font-family: v.$body;
     font-size: 1rem;
     padding: 1rem;
-    background-color: #fffbf6;
+    background-color: v.$cream;
     border: none;
     border-radius: 12px;
     color: v.$black;
     &::placeholder {
-      color: #2e4d49;
+      color: v.$green;
     }
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 3px hsla(356, 98%, 17%, 25%),
-        0 0 0 1px hsla(356, 98%, 17%, 50%);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.5);
     }
   }
 }
@@ -74,7 +73,7 @@
   flex-direction: column;
   margin-bottom: 1rem;
   input {
-    accent-color: v.$orange;
+    accent-color: v.$green;
     margin: 5px;
   }
 }
@@ -95,7 +94,7 @@
 
 .disclaimer {
   text-align: left;
-  color: #25564F;
+  color: v.$green;
   font-size: 0.75rem;
   line-height: 1.45;
 }
