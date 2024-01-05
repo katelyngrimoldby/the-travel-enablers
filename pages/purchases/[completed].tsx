@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import Hero from "../../components/Hero";
-import heroImg from "../../public/cardPage-hero-img.jpg";
-import Divider from "../../icons/Divider";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import Hero from '../../components/Hero';
+import heroImg from '../../public/cardPage-hero-img.jpg';
+import Divider from '../../icons/Divider';
 const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PK}`);
 
 const PurchaseCompleted: NextPage = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [status, setStatus] = useState<Boolean | undefined>(undefined);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const PurchaseCompleted: NextPage = () => {
       return;
     }
     const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
+      'payment_intent_client_secret'
     );
 
     if (clientSecret) {
@@ -27,19 +27,19 @@ const PurchaseCompleted: NextPage = () => {
           );
           if (paymentIntent.paymentIntent) {
             switch (paymentIntent.paymentIntent.status) {
-              case "succeeded":
+              case 'succeeded':
                 setStatus(true);
                 setMessage(
-                  "You will recieve an email shortly from The Travel Enablers detailing everything you need to know about your trip."
+                  'You will recieve an email shortly from Travelling Foodie Tours detailing everything you need to know about your trip.'
                 );
                 break;
-              case "processing":
+              case 'processing':
                 setStatus(true);
                 setMessage(
-                  "Your purchase is currently in progress, and you will recieve an email shortly from The Travel Enablers detailing everything you need to know about your trip."
+                  'Your purchase is currently in progress, and you will recieve an email shortly from Travelling Foodie Tours detailing everything you need to know about your trip.'
                 );
                 break;
-              case "requires_payment_method":
+              case 'requires_payment_method':
                 setStatus(false);
                 setMessage(
                   "We're sorry, your payment failed. Please try again with another payment method."
@@ -48,7 +48,7 @@ const PurchaseCompleted: NextPage = () => {
               default:
                 setStatus(false);
                 setMessage(
-                  "An unknown error has occured. Please try again later."
+                  'An unknown error has occured. Please try again later.'
                 );
                 break;
             }
@@ -60,7 +60,7 @@ const PurchaseCompleted: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Purchase Completed | The Travel Enablers</title>
+        <title>Purchase Completed | Travelling Foodie Tours</title>
       </Head>
       <main>
         <Hero imgSrc={heroImg}>

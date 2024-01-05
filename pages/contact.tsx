@@ -2,18 +2,18 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import Divider from '../icons/Divider';
-import heroImg from '../public/contact-hero-img.jpg';
+import heroImg from '../public/hero-img.jpg';
 import styles from '../styles/contact.module.scss';
 
 const Contact: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Contact Us | The Travel Enablers</title>
+        <title>Contact Us | Travelling Foodie Tours</title>
 
         <meta
           property='og:title'
-          content='Contact Us | The Travel Enablers'
+          content='Contact Us | Travelling Foodie Tours'
         />
         <meta
           property='og:type'
@@ -21,15 +21,15 @@ const Contact: NextPage = () => {
         />
         <meta
           property='og:url'
-          content='https://www.thetravelenablers.com/contact'
+          content='https://www.travellingfoodietours.com/contact'
         />
         <meta
           property='og:image'
-          content='https://www.thetravelenablers.com/og-image.jpg'
+          content='https://www.travellingfoodietours.com/og-image.jpg'
         />
         <meta
           property='og:image:secure_url'
-          content='https://www.thetravelenablers.com/og-image.jpg'
+          content='https://www.travellingfoodietours.com/og-image.jpg'
         />
       </Head>
       <main>

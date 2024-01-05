@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Hero from "../components/Hero";
-import heroImg from "../public/contact-hero-img.jpg";
-import Divider from "../icons/Divider";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Hero from '../components/Hero';
+import heroImg from '../public/hero-img.jpg';
+import Divider from '../icons/Divider';
 
 const FormSubmit: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Form Sent | The Travel Enablers</title>
+        <title>Form Sent | Travelling Foodie Tours</title>
       </Head>
       <main>
         <Hero imgSrc={heroImg}>

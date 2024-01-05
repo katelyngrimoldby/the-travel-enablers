@@ -78,14 +78,14 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
   return (
     <>
       <Head>
-        <title>{`${title} | The Travel Enablers`}</title>
+        <title>{`${title} | Travelling Foodie Tours`}</title>
         <meta
           name='description'
           content={plainDescription}
         />
         <meta
           property='og:title'
-          content={`${title} | The Travel Enablers`}
+          content={`${title} | Travelling Foodie Tours`}
         />
         <meta
           property='og:description'
@@ -97,7 +97,7 @@ const Trip: NextPage<PageProps> = ({ trip }) => {
         />
         <meta
           property='og:url'
-          content={`https://www.thetravelenablers.com/trips/${slug}`}
+          content={`https://www.travellingfoodietours.com/trips/${slug}`}
         />
         <meta
           property='og:image'

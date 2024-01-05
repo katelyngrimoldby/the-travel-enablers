@@ -5,7 +5,7 @@ import { TypeArticle, TypeArticleFields } from '../../types';
 import Hero from '../../components/Hero';
 import ArticleCard from '../../components/ArticleCard';
 import Divider from '../../icons/Divider';
-import heroImg from '../../public/cardPage-hero-img.jpg';
+import heroImg from '../../public/hero-img.jpg';
 import styles from '../../styles/cardPage.module.scss';
 
 type PageProps = {
@@ -33,14 +33,14 @@ const Articles: NextPage<PageProps> = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>Articles | The Travel Enablers</title>
+        <title>Articles | Travelling Foodie Tours</title>
         <meta
           name='description'
           content='Read up on all the travel-related articles you can here.'
         />
         <meta
           property='og:title'
-          content='Articles | The Travel Enablers'
+          content='Articles | Travelling Foodie Tours'
         />
         <meta
           property='og:description'
@@ -52,15 +52,15 @@ const Articles: NextPage<PageProps> = ({ articles }) => {
         />
         <meta
           property='og:url'
-          content='https://www.thetravelenablers.com/articles'
+          content='https://www.travellingfoodietours.com/articles'
         />
         <meta
           property='og:image'
-          content='https://www.thetravelenablers.com/og-image.jpg'
+          content='https://www.travellingfoodietours.com/og-image.jpg'
         />
         <meta
           property='og:image:secure_url'
-          content='https://www.thetravelenablers.com/og-image.jpg'
+          content='https://www.travellingfoodietours.com/og-image.jpg'
         />
       </Head>
       <main>

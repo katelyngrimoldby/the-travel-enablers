@@ -5,7 +5,7 @@ import { TypeGroupTrip, TypeGroupTripFields } from '../../types';
 import Hero from '../../components/Hero';
 import TripCard from '../../components/TripCard';
 import Divider from '../../icons/Divider';
-import heroImg from '../../public/cardPage-hero-img.jpg';
+import heroImg from '../../public/hero-img.jpg';
 import styles from '../../styles/cardPage.module.scss';
 
 type PageProps = {
@@ -47,18 +47,18 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
   return (
     <>
       <Head>
-        <title>Upcoming Trips | The Travel Enablers</title>
+        <title>Upcoming Trips | Travelling Foodie Tours</title>
         <meta
           name='description'
-          content='View all of the upcoming group trips here. Pick your favourite and reserve your spot!'
+          content='View all of the upcoming trips here. Pick your favourite and reserve your spot!'
         />
         <meta
           property='og:title'
-          content='Upcoming Trips | The Travel Enablers'
+          content='Upcoming Trips | Travelling Foodie Tours'
         />
         <meta
           property='og:description'
-          content='View all of the upcoming group trips here. Pick your favourite and reserve your spot!'
+          content='View all of the upcoming trips here. Pick your favourite and reserve your spot!'
         />
         <meta
           property='og:type'
@@ -66,15 +66,15 @@ const Trips: NextPage<PageProps> = ({ trips }) => {
         />
         <meta
           property='og:url'
-          content='https://www.thetravelenablers.com/trips'
+          content='https://www.travellingfoodietours.com/trips'
         />
         <meta
           property='og:image'
-          content='https://www.thetravelenablers.com/og-image.jpg'
+          content='https://www.travellingfoodietours.com/og-image.jpg'
         />
         <meta
           property='og:image:secure_url'
-          content='https://www.thetravelenablers.com/og-image.jpg'
+          content='https://www.travellingfoodietours.com/og-image.jpg'
         />
       </Head>
       <main>

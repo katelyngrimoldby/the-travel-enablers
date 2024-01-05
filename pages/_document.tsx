@@ -24,15 +24,15 @@ export default function Document() {
         />
         <meta
           name='msapplication-TileColor'
-          content='#fffbf6'
+          content='#f7f7f7'
         />
         <meta
           name='theme-color'
-          content='#fffbf6'
+          content='#f7f7f7'
         />
         <link
           rel='canonical'
-          href='https://www.thetravelenablers.com'
+          href='https://www.travellingfoodietours.com'
         />
       </Head>
       <body>
