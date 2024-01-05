@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import Hero from '../../components/Hero';
-import heroImg from '../../public/cardPage-hero-img.jpg';
+import heroImg from '../../public/hero-img.jpg';
 import Divider from '../../icons/Divider';
 const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PK}`);
 
