@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import ColorfulCompass from '../icons/ColorfulCompass/ColorfulCompass';
+import WhiteInitials from '../icons/WhiteInitials/WhiteInitials';
 import MenuOpen from '../icons/MenuOpen';
 import MenuClose from '../icons/MenuClose';
-import ColorfulFullText from '../icons/ColorfulFullText/ColorfulFullText';
+import BlackFullText from '../icons/BlackFullText/BlackFullText';
 import styles from '../styles/Layout.module.scss';
 
 type LayoutProps = {
@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
           aria-label='Go to Home'
           onClick={visible ? clickHandler : undefined}
         >
-          <ColorfulCompass />
+          <WhiteInitials />
         </Link>
         <button
           className={styles.menuButton}
@@ -67,7 +67,7 @@ const Layout = ({ children }: LayoutProps) => {
       {children}
       <footer>
         <div className={styles.topFooter}>
-          <ColorfulFullText />
+          <BlackFullText />
           <div className={styles.wrapper}>
             <section>
               <h2>Explore</h2>
@@ -115,7 +115,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
         <div className={styles.bottomFooter}>
-          <span>The Travel Enablers © 2022</span>
+          <span>Travelling Foodie Tours © 2024</span>
           <span>
             Designed and built by{' '}
             <a
