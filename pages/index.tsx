@@ -285,7 +285,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
               Subscribe to our newsletter to be the first to hear of new tours!
             </h2>
             <form
-              name='contact'
+              name='newsletter'
               method='POST'
               action='/'
               data-netlify='true'
@@ -294,7 +294,7 @@ const Home: NextPage<PageProps> = ({ trips, articles }) => {
               <input
                 type='hidden'
                 name='form-name'
-                value='contact'
+                value='newsletter'
               />
               <input
                 type='email'
